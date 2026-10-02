@@ -1,1292 +1,1182 @@
+```html
 <!DOCTYPE html>
-<html lang="en" class="dark" style="scroll-behavior: smooth;">
+<html lang="en" class="dark" style="scroll-behavior:smooth;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustInUniverse | The Extraordinary Creator & Knowledge Ecosystem</title>
-    <meta name="description" content="The ultimate hub for Content Creation, Education & STEM, Real Project Building, AI Tools Directory, Remote Career Hub, and Fun Interactive Games.">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        universe: {
-                            900: '#07090e',
-                            800: '#0d111a',
-                            700: '#161b26',
-                            600: '#212938',
-                            accent: '#8b5cf6',
-                            cyan: '#06b6d4',
-                            pink: '#ec4899',
-                            emerald: '#10b981'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #07090e;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TrustInUniverse | The Extraordinary Creator & Knowledge Ecosystem</title>
+<meta name="description" content="TrustInUniverse — Explore, Learn, Build, Create, Research, Play and Master the Modern Digital World.">
 
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: rgba(22, 27, 38, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={
+darkMode:'class',
+theme:{
+extend:{
+colors:{
+universe:{
+900:'#07090e',
+800:'#0d111a',
+700:'#161b26',
+600:'#212938',
+accent:'#8b5cf6',
+cyan:'#06b6d4',
+pink:'#ec4899',
+emerald:'#10b981'
+}
+},
+fontFamily:{
+sans:['Plus Jakarta Sans','sans-serif'],
+display:['Space Grotesk','sans-serif']
+}
+}
+}
+}
+</script>
 
-        .glass-card:hover {
-            border-color: rgba(139, 92, 246, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px rgba(139, 92, 246, 0.25);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* Gradient Glowing Text & Elements */
-        .gradient-text {
-            background: linear-gradient(135deg, #a78bfa 0%, #06b6d4 50%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background:#07090e;
+color:#f3f4f6;
+overflow-x:hidden;
+}
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-2;
+background:
+linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+background-size:45px 45px;
+}
+body::after{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-3;
+background:radial-gradient(circle at 50% -10%,rgba(139,92,246,.14),transparent 38%);
+}
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-        }
+.glass-card{
+background:rgba(22,27,38,.72);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:1rem;
+transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+.glass-card:hover{
+border-color:rgba(139,92,246,.42);
+transform:translateY(-4px);
+box-shadow:0 15px 35px -15px rgba(139,92,246,.35);
+}
 
-        /* Subtle Ambient Glow */
-        .ambient-glow {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
-            filter: blur(70px);
-            pointer-events: none;
-            z-index: 0;
-        }
+.gradient-text{
+background:linear-gradient(135deg,#a78bfa 0%,#06b6d4 50%,#ec4899 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.gradient-bg{
+background:linear-gradient(135deg,#8b5cf6 0%,#06b6d4 100%);
+}
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #07090e;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #212938;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8b5cf6;
-        }
+.ambient-glow{
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+background:radial-gradient(circle,rgba(139,92,246,.15) 0%,rgba(6,182,212,.05) 50%,transparent 70%);
+filter:blur(70px);
+pointer-events:none;
+z-index:0;
+}
 
-        /* Memory game flip styling */
-        .memory-card {
-            perspective: 1000px;
-            cursor: pointer;
-        }
-        .memory-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.4s;
-            transform-style: preserve-3d;
-        }
-        .memory-card.flipped .memory-card-inner {
-            transform: rotateY(180deg);
-        }
-        .memory-card-front, .memory-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-        }
-        .memory-card-front {
-            background-color: #161b26;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .memory-card-back {
-            background-color: #212938;
-            border: 1px solid rgba(139, 92, 246, 0.5);
-            transform: rotateY(180deg);
-        }
-    </style>
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#07090e}
+::-webkit-scrollbar-thumb{background:#212938;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#8b5cf6}
+
+section{position:relative}
+
+.nav-btn.active{
+background:#8b5cf6!important;
+color:white!important;
+box-shadow:0 4px 15px rgba(139,92,246,.3);
+}
+
+.progress-line{
+position:fixed;
+top:0;
+left:0;
+height:3px;
+width:0%;
+background:linear-gradient(90deg,#8b5cf6,#06b6d4,#ec4899);
+z-index:100;
+}
+
+.stat-number{
+font-family:'Space Grotesk',sans-serif;
+font-weight:800;
+}
+
+.pulse-dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#10b981;
+box-shadow:0 0 0 0 rgba(16,185,129,.7);
+animation:pulse 2s infinite;
+}
+@keyframes pulse{
+70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}
+100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}
+}
+
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.memory-card{
+perspective:1000px;
+cursor:pointer;
+}
+.memory-card-inner{
+position:relative;
+width:100%;
+height:100%;
+text-align:center;
+transition:transform .4s;
+transform-style:preserve-3d;
+}
+.memory-card.flipped .memory-card-inner{transform:rotateY(180deg)}
+.memory-card-front,
+.memory-card-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:.75rem;
+}
+.memory-card-front{
+background:#161b26;
+border:1px solid rgba(255,255,255,.1);
+}
+.memory-card-back{
+background:#212938;
+border:1px solid rgba(139,92,246,.5);
+transform:rotateY(180deg);
+}
+
+@media(hover:hover){
+a:hover,
+button:hover,
+[role="button"]:hover{
+color:#ef4444!important;
+font-weight:800!important;
+}
+.glass-card a:hover,
+.glass-card button:hover{
+color:#ef4444!important;
+}
+}
+
+@media(max-width:768px){
+.glass-card:hover{transform:none}
+}
+</style>
 </head>
-<body class="relative min-h-screen flex flex-col justify-between">
-
-    <div class="ambient-glow top-0 left-1/2 -translate-x-1/2"></div>
-    <div class="ambient-glow top-1/2 right-0"></div>
-
-    <!-- MAIN NAVBAR -->
-    <header class="sticky top-0 z-50 bg-universe-900/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo -->
-            <a href="#page-home" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-universe-accent/30 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-atom"></i>
-                </div>
-                <div>
-                    <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-universe-accent transition-colors">TrustInUniverse</span>
-                    <span class="block text-xs text-gray-400 font-medium">Extraordinary Hub</span>
-                </div>
-            </a>
-
-            <!-- Desktop Navigation Tabs -->
-            <nav class="hidden lg:flex items-center gap-1 bg-universe-800/80 p-1.5 rounded-full border border-white/5">
-                <a href="#page-home" id="nav-home" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-white bg-universe-accent shadow-md transition-all">
-                    <i class="fa-solid fa-house mr-1.5"></i> Home
-                </a>
-                <a href="#page-content" id="nav-content" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
-                    <i class="fa-solid fa-clapperboard mr-1.5 text-universe-accent"></i> Content Guide
-                </a>
-                <a href="#page-education" id="nav-education" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
-                    <i class="fa-solid fa-graduation-cap mr-1.5 text-universe-cyan"></i> STEM & Education
-                </a>
-                <a href="#page-projects" id="nav-projects" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
-                    <i class="fa-solid fa-cubes mr-1.5 text-universe-pink"></i> Projects Portal
-                </a>
-                <a href="#page-tools" id="nav-tools" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
-                    <i class="fa-solid fa-compass mr-1.5 text-universe-emerald"></i> Directory
-                </a>
-                <a href="#page-games" id="nav-games" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
-                    <i class="fa-solid fa-gamepad mr-1.5 text-amber-400"></i> Games Zone
-                </a>
-            </nav>
-
-            <!-- CTA Action Button -->
-            <div class="hidden sm:flex items-center gap-3">
-                <button onclick="openModal('quickStartModal')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold shadow-lg shadow-universe-accent/25 hover:opacity-95 transition-all">
-                    <i class="fa-solid fa-rocket mr-2"></i> Get Started
-                </button>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300 hover:text-white">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Navigation Menu Dropdown -->
-        <div id="mobileMenu" class="hidden lg:hidden border-b border-white/10 bg-universe-800 px-4 py-4 space-y-2">
-            <a href="#page-home" onclick="toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold text-white hover:bg-white/5">Home Overview</a>
-            <a href="#page-content" onclick="toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300 hover:bg-white/5">Content Creation Guide</a>
-            <a href="#page-education" onclick="toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300 hover:bg-white/5">STEM & Education Hub</a>
-            <a href="#page-projects" onclick="toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300 hover:bg-white/5">Projects Portal & Showcase</a>
-            <a href="#page-tools" onclick="toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300 hover:bg-white/5">Directory (AI, Jobs, Research)</a>
-            <a href="#page-games" onclick="toggleMobileMenu()" class="block w-full text-left px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300 hover:bg-white/5">Fun & Games Zone</a>
-        </div>
-    </header>
-
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10 space-y-24">
-
-        <!-- ================= PAGE 1: HOME PAGE OVERVIEW ================= -->
-        <section id="page-home" class="scroll-mt-24 space-y-16">
-            <!-- Hero Banner -->
-            <div class="text-center max-w-4xl mx-auto pt-8 space-y-6">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-universe-accent/10 border border-universe-accent/30 text-universe-accent text-xs font-bold tracking-wide uppercase">
-                    <i class="fa-solid fa-sparkles"></i> The All-In-One Extraordinary Platform
-                </div>
-                <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                    Explore, Learn, Build & Master <br><span class="gradient-text">The Modern Digital World</span>
-                </h1>
-                <p class="text-base sm:text-lg text-gray-400 font-normal leading-relaxed max-w-2xl mx-auto">
-                    A multi-dimensional platform bridging elite Content Creation guides, Academic STEM solvers, real-world Open-Source Projects, curated AI tools, and interactive gaming.
-                </p>
-                <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-                    <a href="#page-projects" class="px-7 py-3.5 rounded-xl gradient-bg text-white font-bold text-xs shadow-xl shadow-universe-accent/30 hover:scale-105 transition-all inline-block">
-                        <i class="fa-solid fa-code-branch mr-2"></i> Open Project Hub
-                    </a>
-                    <a href="#page-tools" class="px-7 py-3.5 rounded-xl bg-universe-700 hover:bg-universe-600 border border-white/10 text-white font-bold text-xs transition-all inline-block">
-                        <i class="fa-solid fa-layer-group mr-2"></i> Browse Directory (20+ Tools)
-                    </a>
-                </div>
-            </div>
-
-            <!-- Main Overview Cards Section -->
-            <div class="space-y-6">
-                <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                    <h2 class="font-display font-bold text-2xl text-white">Platform Ecosystem Overview</h2>
-                    <span class="text-xs text-gray-400">Scroll down to explore all sections</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Block 1: Content Creation -->
-                    <div class="glass-card p-6 flex flex-col justify-between space-y-4 group">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-universe-accent/10 border border-universe-accent/20 flex items-center justify-center text-universe-accent text-2xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-clapperboard"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-white">Content Creation Roadmap</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Complete production playbook including viral hook generation, timeline editing rules, thumbnail design principles, and multi-platform algorithm guides.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-0.5 rounded font-semibold">Scriptwriting</span>
-                                <span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-0.5 rounded font-semibold">Hook Generator</span>
-                                <span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-0.5 rounded font-semibold">Editing Timelines</span>
-                            </div>
-                        </div>
-                        <a href="#page-content" class="w-full py-2.5 rounded-xl bg-universe-accent/20 border border-universe-accent/40 hover:bg-universe-accent text-white text-xs font-bold flex items-center justify-center gap-2 transition-all mt-4">
-                            Explore Full Hub <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                    </div>
-
-                    <!-- Block 2: Education & STEM -->
-                    <div class="glass-card p-6 flex flex-col justify-between space-y-4 group">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-universe-cyan/10 border border-universe-cyan/20 flex items-center justify-center text-universe-cyan text-2xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-white">STEM & Education Hub</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Interactive Kinematics solver, full-stack Web Development path, structured Prompt Engineering framework, and study workflow methodologies.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="text-[10px] bg-universe-cyan/20 text-universe-cyan px-2 py-0.5 rounded font-semibold">Kinematics Calculator</span>
-                                <span class="text-[10px] bg-universe-cyan/20 text-universe-cyan px-2 py-0.5 rounded font-semibold">Full-Stack Path</span>
-                                <span class="text-[10px] bg-universe-cyan/20 text-universe-cyan px-2 py-0.5 rounded font-semibold">Prompting</span>
-                            </div>
-                        </div>
-                        <a href="#page-education" class="w-full py-2.5 rounded-xl bg-universe-cyan/20 border border-universe-cyan/40 hover:bg-universe-cyan hover:text-black text-white text-xs font-bold flex items-center justify-center gap-2 transition-all mt-4">
-                            Explore Full Hub <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                    </div>
-
-                    <!-- Block 3: Real Projects -->
-                    <div class="glass-card p-6 flex flex-col justify-between space-y-4 group">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-universe-pink/10 border border-universe-pink/20 flex items-center justify-center text-universe-pink text-2xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-cubes"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-white">Project Hub & Open Source</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Step-by-step builds, community upload showcase, and direct breakdowns of world-class projects (Linux kernel, React, OpenCV, AutoGPT, TensorFlow).
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="text-[10px] bg-universe-pink/20 text-universe-pink px-2 py-0.5 rounded font-semibold">Step-By-Step</span>
-                                <span class="text-[10px] bg-universe-pink/20 text-universe-pink px-2 py-0.5 rounded font-semibold">Open Source Repos</span>
-                                <span class="text-[10px] bg-universe-pink/20 text-universe-pink px-2 py-0.5 rounded font-semibold">Submit Project</span>
-                            </div>
-                        </div>
-                        <a href="#page-projects" class="w-full py-2.5 rounded-xl bg-universe-pink/20 border border-universe-pink/40 hover:bg-universe-pink text-white text-xs font-bold flex items-center justify-center gap-2 transition-all mt-4">
-                            Explore Full Hub <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                    </div>
-
-                    <!-- Block 4: Curated Web Directory -->
-                    <div class="glass-card p-6 flex flex-col justify-between space-y-4 group">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-universe-emerald/10 border border-universe-emerald/20 flex items-center justify-center text-universe-emerald text-2xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-compass"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-white">Expanded Web Directory</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                20+ verified catalog cards across AI LLMs, Computer Vision, Speech Synthesis, Global Remote Job Boards, and Academic Search Engines.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="text-[10px] bg-universe-emerald/20 text-universe-emerald px-2 py-0.5 rounded font-semibold">20+ Curated Tools</span>
-                                <span class="text-[10px] bg-universe-emerald/20 text-universe-emerald px-2 py-0.5 rounded font-semibold">Remote Career</span>
-                                <span class="text-[10px] bg-universe-emerald/20 text-universe-emerald px-2 py-0.5 rounded font-semibold">Research</span>
-                            </div>
-                        </div>
-                        <a href="#page-tools" class="w-full py-2.5 rounded-xl bg-universe-emerald/20 border border-universe-emerald/40 hover:bg-universe-emerald hover:text-black text-white text-xs font-bold flex items-center justify-center gap-2 transition-all mt-4">
-                            Explore Full Hub <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                    </div>
-
-                    <!-- Block 5: Fun & Games Zone -->
-                    <div class="glass-card p-6 flex flex-col justify-between space-y-4 group">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-gamepad"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-white">Fun & Interactive Games Zone</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Browser mini-games: Speed Clicker test, AI Prompt Trivia Challenge, and Tech Memory Matching game built for quick brain breaks.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="text-[10px] bg-amber-400/20 text-amber-400 px-2 py-0.5 rounded font-semibold">Speed Clicker</span>
-                                <span class="text-[10px] bg-amber-400/20 text-amber-400 px-2 py-0.5 rounded font-semibold">AI Trivia</span>
-                                <span class="text-[10px] bg-amber-400/20 text-amber-400 px-2 py-0.5 rounded font-semibold">Memory Match</span>
-                            </div>
-                        </div>
-                        <a href="#page-games" class="w-full py-2.5 rounded-xl bg-amber-400/20 border border-amber-400/40 hover:bg-amber-400 hover:text-black text-white text-xs font-bold flex items-center justify-center gap-2 transition-all mt-4">
-                            Explore Full Hub <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                    </div>
-
-                    <!-- Block 6: Creator Community -->
-                    <div class="glass-card p-6 flex flex-col justify-between space-y-4 group border-universe-accent/30 bg-universe-accent/5">
-                        <div class="space-y-3">
-                            <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-white">Submit Innovation & Join Hub</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Upload your open-source repository or project idea directly to TrustInUniverse to reach creators and developers worldwide.
-                            </p>
-                            <div class="flex flex-wrap gap-2 pt-1">
-                                <span class="text-[10px] bg-white/10 text-white px-2 py-0.5 rounded font-semibold">Community Powered</span>
-                                <span class="text-[10px] bg-white/10 text-white px-2 py-0.5 rounded font-semibold">Instant Listing</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('submitProjectModal')" class="w-full py-2.5 rounded-xl gradient-bg text-white text-xs font-bold flex items-center justify-center gap-2 shadow-lg transition-all mt-4">
-                            Submit Project Now <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 2: CONTENT CREATION DEEP DIVE ================= -->
-        <section id="page-content" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
-            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <a href="#page-home" class="text-xs text-universe-accent hover:underline mb-2 inline-flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-up"></i> Back to Top
-                    </a>
-                    <span class="block text-universe-accent font-bold text-xs uppercase tracking-wider">Masterclass & Tools</span>
-                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Content Creation & Audience Growth Guide</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">End-to-end strategy from hook generation to viral editing timelines and algorithm mechanics.</p>
-                </div>
-                <button onclick="openGuideModal('Scriptwriting Framework')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold shadow-lg">
-                    <i class="fa-solid fa-file-lines mr-2"></i> Download Script Template
-                </button>
-            </div>
-
-            <!-- Interactive Tool: Viral Hook Generator -->
-            <div class="glass-card p-6 border-universe-accent/40 bg-universe-accent/5 space-y-4">
-                <div class="flex items-center gap-2 text-universe-accent font-bold font-display text-lg">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> Interactive Hook Generator
-                </div>
-                <p class="text-xs text-gray-300">Select your content niche and topic to generate high-retention hooks instantly:</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <select id="hookNiche" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
-                        <option value="tech">Tech & Coding</option>
-                        <option value="education">Education & STEM</option>
-                        <option value="creator">Creator & Monetization</option>
-                    </select>
-                    <input type="text" id="hookTopic" placeholder="e.g. Learning Python in 2026" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
-                    <button onclick="generateHook()" class="py-2.5 px-4 rounded-lg gradient-bg text-white font-bold text-xs">
-                        Generate Hooks
-                    </button>
-                </div>
-                <div id="hookOutput" class="hidden p-4 bg-universe-900 rounded-lg border border-white/10 text-xs text-universe-cyan font-mono space-y-2">
-                    <!-- Dynamic hooks -->
-                </div>
-            </div>
-
-            <!-- Content Modules Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Module 1 -->
-                <div class="glass-card p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-lg bg-universe-accent/20 text-universe-accent flex items-center justify-center font-bold">1</span>
-                        <h2 class="font-display font-bold text-xl text-white">YouTube Scriptwriting & Hook Psychology</h2>
-                    </div>
-                    <p class="text-gray-400 text-xs leading-relaxed">The first 5 seconds determine 80% of video retention. Structure high-performing videos using the Hook-Story-Offer formula.</p>
-                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
-                        <div class="font-semibold text-universe-accent"><i class="fa-solid fa-check mr-1.5"></i> Hook-Story-Offer Rule:</div>
-                        <p>State a high-stakes problem immediately. Deliver dense narrative value with no filler, ending in a focused CTA.</p>
-                    </div>
-                    <button onclick="openGuideModal('YouTube Scriptwriting & Hook Psychology')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
-                        Read Full Scripting Guide
-                    </button>
-                </div>
-
-                <!-- Module 2 -->
-                <div class="glass-card p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-lg bg-universe-cyan/20 text-universe-cyan flex items-center justify-center font-bold">2</span>
-                        <h2 class="font-display font-bold text-xl text-white">Video Editing Timelines (Premiere, CapCut, DaVinci)</h2>
-                    </div>
-                    <p class="text-gray-400 text-xs leading-relaxed">Standardize post-production workflows to cut editing time in half while maintaining cinema-quality visual pacing.</p>
-                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
-                        <div class="font-semibold text-universe-cyan"><i class="fa-solid fa-check mr-1.5"></i> Timeline Sequence:</div>
-                        <p>A-Roll Rough Cut &rarr; Audio Normalization (-14 LUFS) &rarr; SFX Placement &rarr; Motion Graphics & Captions.</p>
-                    </div>
-                    <button onclick="openGuideModal('Video Editing Workflow')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
-                        Explore Editing Presets & Timelines
-                    </button>
-                </div>
-
-                <!-- Module 3 -->
-                <div class="glass-card p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-lg bg-universe-pink/20 text-universe-pink flex items-center justify-center font-bold">3</span>
-                        <h2 class="font-display font-bold text-xl text-white">Thumbnail Design & CTR Optimization</h2>
-                    </div>
-                    <p class="text-gray-400 text-xs leading-relaxed">Thumbnails account for 90% of click decisions. Learn focal points, facial expression contrast, and color colorimetry.</p>
-                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
-                        <div class="font-semibold text-universe-pink"><i class="fa-solid fa-check mr-1.5"></i> High-CTR Rule:</div>
-                        <p>Limit thumbnail copy to 3 bold words maximum. Ensure high background contrast and complementary title text.</p>
-                    </div>
-                    <button onclick="openGuideModal('Thumbnail Design & CTR Optimization')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
-                        Study Thumbnail Case Studies
-                    </button>
-                </div>
-
-                <!-- Module 4 -->
-                <div class="glass-card p-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-lg bg-universe-emerald/20 text-universe-emerald flex items-center justify-center font-bold">4</span>
-                        <h2 class="font-display font-bold text-xl text-white">Multi-Platform Algorithm Virality</h2>
-                    </div>
-                    <p class="text-gray-400 text-xs leading-relaxed">Cross-posting architecture and algorithmic optimization across YouTube Shorts, TikTok, and Instagram Reels.</p>
-                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
-                        <div class="font-semibold text-universe-emerald"><i class="fa-solid fa-check mr-1.5"></i> Virality Trigger:</div>
-                        <p>Focus on completion rate and re-watch loops by crafting seamless video end-to-beginning transitions.</p>
-                    </div>
-                    <button onclick="openGuideModal('Multi-Platform Algorithm Virality')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
-                        View Algorithm Playbook
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 3: STEM & EDUCATION HUB ================= -->
-        <section id="page-education" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
-            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <a href="#page-home" class="text-xs text-universe-accent hover:underline mb-2 inline-flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-up"></i> Back to Top
-                    </a>
-                    <span class="block text-universe-cyan font-bold text-xs uppercase tracking-wider">Academic & Skills Hub</span>
-                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">STEM, Web Dev & Prompt Engineering</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">Interactive physics tools, engineering roadmaps, and structured AI prompting rules.</p>
-                </div>
-            </div>
-
-            <!-- Interactive Kinematics Physics Calculator -->
-            <div class="glass-card p-6 border-universe-cyan/40 bg-universe-cyan/5 space-y-4">
-                <div class="flex items-center gap-2 text-universe-cyan font-bold font-display text-lg">
-                    <i class="fa-solid fa-calculator"></i> Interactive Physics Solver: Kinematics ($v = u + at$)
-                </div>
-                <p class="text-xs text-gray-300">Calculate final velocity ($v$), displacement ($s$), or acceleration ($a$) dynamically:</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div>
-                        <label class="block text-[10px] text-gray-400 mb-1">Initial Velocity ($u$) m/s</label>
-                        <input type="number" id="calcU" value="0" class="w-full bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-cyan">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] text-gray-400 mb-1">Acceleration ($a$) m/s²</label>
-                        <input type="number" id="calcA" value="9.8" class="w-full bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-cyan">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] text-gray-400 mb-1">Time ($t$) seconds</label>
-                        <input type="number" id="calcT" value="5" class="w-full bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-cyan">
-                    </div>
-                </div>
-                <button onclick="calculateKinematics()" class="w-full py-2.5 rounded-lg bg-universe-cyan hover:bg-cyan-400 text-black font-bold text-xs transition-colors">
-                    Compute Kinematic Values
-                </button>
-                <div id="calcResult" class="hidden p-4 bg-universe-900 rounded-lg border border-white/10 text-xs text-white font-mono space-y-1">
-                    <!-- Dynamic physics results -->
-                </div>
-            </div>
-
-            <!-- Education Tabs/Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- STEM Physics & Math -->
-                <div class="glass-card p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-universe-cyan/20 text-universe-cyan flex items-center justify-center font-bold text-lg">
-                        <i class="fa-solid fa-square-root-variable"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-lg text-white">STEM Physics & Calculus</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">Master Newtonian dynamics, vector calculus, thermodynamics, and differential equations with structured practice workflows.</p>
-                    <ul class="text-xs text-gray-300 space-y-1.5 pt-2">
-                        <li><i class="fa-solid fa-angle-right text-universe-cyan mr-1"></i> Kinematics & Motion Laws</li>
-                        <li><i class="fa-solid fa-angle-right text-universe-cyan mr-1"></i> Integration & Derivatives</li>
-                        <li><i class="fa-solid fa-angle-right text-universe-cyan mr-1"></i> Electromagnetism Basics</li>
-                    </ul>
-                </div>
-
-                <!-- Web Development Pathway -->
-                <div class="glass-card p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-universe-accent/20 text-universe-accent flex items-center justify-center font-bold text-lg">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-lg text-white">Full-Stack Web Development</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">From foundational HTML/CSS/JS to advanced React, Node.js RESTful APIs, and database architecture (PostgreSQL/MongoDB).</p>
-                    <ul class="text-xs text-gray-300 space-y-1.5 pt-2">
-                        <li><i class="fa-solid fa-angle-right text-universe-accent mr-1"></i> Modern Frontend (React & Tailwind)</li>
-                        <li><i class="fa-solid fa-angle-right text-universe-accent mr-1"></i> Backend Systems (Node & Express)</li>
-                        <li><i class="fa-solid fa-angle-right text-universe-accent mr-1"></i> Database Design & ORMs</li>
-                    </ul>
-                </div>
-
-                <!-- Prompt Engineering -->
-                <div class="glass-card p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-universe-pink/20 text-universe-pink flex items-center justify-center font-bold text-lg">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-lg text-white">Prompt Engineering Architecture</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">Crafting deterministic LLM prompts using System Instructions, Few-Shot Context, Chain-of-Thought reasoning, and JSON output formatting.</p>
-                    <ul class="text-xs text-gray-300 space-y-1.5 pt-2">
-                        <li><i class="fa-solid fa-angle-right text-universe-pink mr-1"></i> Role-Task-Context Framework</li>
-                        <li><i class="fa-solid fa-angle-right text-universe-pink mr-1"></i> Few-Shot In-Context Learning</li>
-                        <li><i class="fa-solid fa-angle-right text-universe-pink mr-1"></i> Structured Output (JSON Schema)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 4: PROJECTS PORTAL & SHOWCASE ================= -->
-        <section id="page-projects" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
-            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <a href="#page-home" class="text-xs text-universe-accent hover:underline mb-2 inline-flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-up"></i> Back to Top
-                    </a>
-                    <span class="block text-universe-pink font-bold text-xs uppercase tracking-wider">Build & Showcase</span>
-                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Real Projects & Open Source Hub</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">Explore real-world software builds, community contributions, and top open-source repositories.</p>
-                </div>
-                <button onclick="openModal('submitProjectModal')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold shadow-lg">
-                    <i class="fa-solid fa-plus mr-2"></i> Submit Your Project
-                </button>
-            </div>
-
-            <!-- Top Open-Source Breakdown Section -->
-            <div class="space-y-4">
-                <h2 class="font-display font-bold text-xl text-white">Featured High-Impact Open-Source Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Project 1 -->
-                    <div class="glass-card p-5 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-universe-cyan"><i class="fa-brands fa-linux mr-1"></i> Linux Kernel</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">C / Assembly</span>
-                        </div>
-                        <p class="text-xs text-gray-400">The core operating system kernel powering millions of servers, Android devices, and supercomputers globally.</p>
-                        <a href="https://github.com/torvalds/linux" target="_blank" rel="noopener noreferrer" class="text-xs text-universe-accent font-semibold hover:underline inline-flex items-center gap-1">
-                            View GitHub Repository <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="glass-card p-5 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-universe-accent"><i class="fa-brands fa-react mr-1"></i> React UI Framework</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">JavaScript / JSX</span>
-                        </div>
-                        <p class="text-xs text-gray-400">Meta's declarative, component-based JavaScript library for building modern interactive user interfaces.</p>
-                        <a href="https://github.com/facebook/react" target="_blank" rel="noopener noreferrer" class="text-xs text-universe-accent font-semibold hover:underline inline-flex items-center gap-1">
-                            View GitHub Repository <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="glass-card p-5 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-universe-emerald"><i class="fa-solid fa-eye mr-1"></i> OpenCV Vision</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">C++ / Python</span>
-                        </div>
-                        <p class="text-xs text-gray-400">Open-source computer vision and machine learning software library for real-time image processing.</p>
-                        <a href="https://github.com/opencv/opencv" target="_blank" rel="noopener noreferrer" class="text-xs text-universe-accent font-semibold hover:underline inline-flex items-center gap-1">
-                            View GitHub Repository <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="glass-card p-5 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-amber-400"><i class="fa-solid fa-brain mr-1"></i> TensorFlow</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">Python / C++</span>
-                        </div>
-                        <p class="text-xs text-gray-400">Google's end-to-end open source platform for machine learning and deep neural networks.</p>
-                        <a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="noopener noreferrer" class="text-xs text-universe-accent font-semibold hover:underline inline-flex items-center gap-1">
-                            View GitHub Repository <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="glass-card p-5 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-universe-pink"><i class="fa-solid fa-robot mr-1"></i> AutoGPT</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">Python</span>
-                        </div>
-                        <p class="text-xs text-gray-400">An autonomous AI agent framework capable of executing complex multi-step tasks independently.</p>
-                        <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="noopener noreferrer" class="text-xs text-universe-accent font-semibold hover:underline inline-flex items-center gap-1">
-                            View GitHub Repository <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="glass-card p-5 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-universe-cyan"><i class="fa-solid fa-terminal mr-1"></i> VS Code Core</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">TypeScript</span>
-                        </div>
-                        <p class="text-xs text-gray-400">Microsoft's extensible open-source code editor built on Electron and Web technologies.</p>
-                        <a href="https://github.com/microsoft/vscode" target="_blank" rel="noopener noreferrer" class="text-xs text-universe-accent font-semibold hover:underline inline-flex items-center gap-1">
-                            View GitHub Repository <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dynamic Community Uploads Section -->
-            <div class="space-y-4 pt-6 border-t border-white/10">
-                <div class="flex items-center justify-between">
-                    <h2 class="font-display font-bold text-xl text-white">Community Submitted Projects</h2>
-                    <span class="text-xs text-gray-400">Updated Real-Time</span>
-                </div>
-                <div id="communityProjectsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Default Community Card -->
-                    <div class="glass-card p-4 border-white/10 flex flex-col justify-between space-y-2">
-                        <div>
-                            <div class="flex items-center justify-between mb-1">
-                                <h3 class="font-bold text-sm text-white">AI Real-time Camera Filter</h3>
-                                <span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-0.5 rounded">Computer Vision</span>
-                            </div>
-                            <p class="text-xs text-gray-400">Browser-based facial landmark detection using WebAssembly and MediaPipe.</p>
-                        </div>
-                        <div class="text-[10px] text-gray-500 pt-2 flex items-center justify-between border-t border-white/5">
-                            <span>Submitted by: Community Creator</span>
-                            <span class="text-universe-cyan font-mono">Status: Verified</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 5: EXPANDED DIRECTORY (20+ TOOLS) ================= -->
-        <section id="page-tools" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
-            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <a href="#page-home" class="text-xs text-universe-accent hover:underline mb-2 inline-flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-up"></i> Back to Top
-                    </a>
-                    <span class="block text-universe-emerald font-bold text-xs uppercase tracking-wider">Curated Web Catalog</span>
-                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Directory of AI, Remote Careers & Research</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">20+ handpicked platforms for productivity, machine intelligence, job hunting, and academic papers.</p>
-                </div>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap gap-2">
-                <button onclick="filterDirectory('all', event)" class="dir-filter active px-4 py-2 rounded-lg text-xs font-bold bg-universe-emerald text-black">All Tools (20+)</button>
-                <button onclick="filterDirectory('ai', event)" class="dir-filter px-4 py-2 rounded-lg text-xs font-bold bg-universe-800 text-gray-300 hover:text-white">AI LLMs & Vision</button>
-                <button onclick="filterDirectory('jobs', event)" class="dir-filter px-4 py-2 rounded-lg text-xs font-bold bg-universe-800 text-gray-300 hover:text-white">Remote Careers</button>
-                <button onclick="filterDirectory('research', event)" class="dir-filter px-4 py-2 rounded-lg text-xs font-bold bg-universe-800 text-gray-300 hover:text-white">Research & Science</button>
-            </div>
-
-            <!-- 20 Grid Catalog Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="directoryGrid">
-                <!-- Tool 1 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">ChatGPT</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI LLM</span></div>
-                    <p class="text-[11px] text-gray-400">OpenAI's state-of-the-art conversational model for reasoning and coding.</p>
-                    <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 2 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Claude AI</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI LLM</span></div>
-                    <p class="text-[11px] text-gray-400">Anthropic's high-precision assistant focused on nuanced analysis and writing.</p>
-                    <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 3 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Google Gemini</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI Multimodal</span></div>
-                    <p class="text-[11px] text-gray-400">Google's flagship multimodal model integrated with real-time web search capability.</p>
-                    <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 4 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Midjourney</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI Image</span></div>
-                    <p class="text-[11px] text-gray-400">Generative AI image synthesizer producing photorealistic and artistic visuals.</p>
-                    <a href="https://midjourney.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 5 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">ElevenLabs</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI Audio</span></div>
-                    <p class="text-[11px] text-gray-400">Prime voice AI cloning and ultra-realistic text-to-speech engine.</p>
-                    <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 6 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Perplexity AI</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI Search</span></div>
-                    <p class="text-[11px] text-gray-400">Answer engine providing direct, cited response breakdowns to complex queries.</p>
-                    <a href="https://perplexity.ai" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 7 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">RunwayML</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI Video</span></div>
-                    <p class="text-[11px] text-gray-400">Next-generation generative video tools and AI film directing capabilities.</p>
-                    <a href="https://runwayml.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 8 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="ai">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Hugging Face</span><span class="text-[9px] bg-universe-accent/20 text-universe-accent px-1.5 py-0.5 rounded">AI Models</span></div>
-                    <p class="text-[11px] text-gray-400">The open-source AI community repository for models, datasets, and spaces.</p>
-                    <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-
-                <!-- Tool 9 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="jobs">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">We Work Remotely</span><span class="text-[9px] bg-universe-emerald/20 text-universe-emerald px-1.5 py-0.5 rounded">Remote Jobs</span></div>
-                    <p class="text-[11px] text-gray-400">Largest global remote work community for software, design, and marketing roles.</p>
-                    <a href="https://weworkremotely.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 10 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="jobs">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Remote OK</span><span class="text-[9px] bg-universe-emerald/20 text-universe-emerald px-1.5 py-0.5 rounded">Remote Jobs</span></div>
-                    <p class="text-[11px] text-gray-400">Live remote job board tracking tech, management, and engineering contracts.</p>
-                    <a href="https://remoteok.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 11 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="jobs">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Toptal</span><span class="text-[9px] bg-universe-emerald/20 text-universe-emerald px-1.5 py-0.5 rounded">Freelance</span></div>
-                    <p class="text-[11px] text-gray-400">Exclusive network connecting the top 3% of freelance software engineers and designers.</p>
-                    <a href="https://toptal.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 12 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="jobs">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Wellfound (AngelList)</span><span class="text-[9px] bg-universe-emerald/20 text-universe-emerald px-1.5 py-0.5 rounded">Startups</span></div>
-                    <p class="text-[11px] text-gray-400">The prime portal for joining early-stage tech startups and high-growth ventures.</p>
-                    <a href="https://wellfound.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 13 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="jobs">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Upwork</span><span class="text-[9px] bg-universe-emerald/20 text-universe-emerald px-1.5 py-0.5 rounded">Gig Work</span></div>
-                    <p class="text-[11px] text-gray-400">Global freelancing platform for video editors, developers, and project leads.</p>
-                    <a href="https://upwork.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 14 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="jobs">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">FlexJobs</span><span class="text-[9px] bg-universe-emerald/20 text-universe-emerald px-1.5 py-0.5 rounded">Vetted Jobs</span></div>
-                    <p class="text-[11px] text-gray-400">Hand-screened remote and flexible career listings across 50+ industries.</p>
-                    <a href="https://flexjobs.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-
-                <!-- Tool 15 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="research">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">arXiv.org</span><span class="text-[9px] bg-universe-cyan/20 text-universe-cyan px-1.5 py-0.5 rounded">Preprints</span></div>
-                    <p class="text-[11px] text-gray-400">Open-access archive for 2M+ scholarly articles in physics, CS, and math.</p>
-                    <a href="https://arxiv.org" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 16 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="research">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Google Scholar</span><span class="text-[9px] bg-universe-cyan/20 text-universe-cyan px-1.5 py-0.5 rounded">Literature</span></div>
-                    <p class="text-[11px] text-gray-400">Freely accessible search engine indexing peer-reviewed research papers.</p>
-                    <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 17 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="research">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Consensus AI</span><span class="text-[9px] bg-universe-cyan/20 text-universe-cyan px-1.5 py-0.5 rounded">Paper Search</span></div>
-                    <p class="text-[11px] text-gray-400">AI-powered search engine extracting answers directly from scientific research.</p>
-                    <a href="https://consensus.app" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 18 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="research">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">ResearchGate</span><span class="text-[9px] bg-universe-cyan/20 text-universe-cyan px-1.5 py-0.5 rounded">Academic Network</span></div>
-                    <p class="text-[11px] text-gray-400">Professional network for scientists and researchers to share publications.</p>
-                    <a href="https://researchgate.net" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 19 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="research">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Papers With Code</span><span class="text-[9px] bg-universe-cyan/20 text-universe-cyan px-1.5 py-0.5 rounded">ML Papers</span></div>
-                    <p class="text-[11px] text-gray-400">Free resource tracking machine learning papers alongside code implementations.</p>
-                    <a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-                <!-- Tool 20 -->
-                <div class="glass-card p-4 space-y-2 tool-item" data-cat="research">
-                    <div class="flex items-center justify-between"><span class="font-bold text-sm text-white">Semantic Scholar</span><span class="text-[9px] bg-universe-cyan/20 text-universe-cyan px-1.5 py-0.5 rounded">Research Engine</span></div>
-                    <p class="text-[11px] text-gray-400">AI-driven research tool for finding significant scientific literature connections.</p>
-                    <a href="https://semanticscholar.org" target="_blank" rel="noopener noreferrer" class="text-[11px] text-universe-cyan hover:underline inline-flex items-center gap-1 pt-1">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 6: FUN & GAMES ZONE ================= -->
-        <section id="page-games" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
-            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <a href="#page-home" class="text-xs text-universe-accent hover:underline mb-2 inline-flex items-center gap-1">
-                        <i class="fa-solid fa-arrow-up"></i> Back to Top
-                    </a>
-                    <span class="block text-amber-400 font-bold text-xs uppercase tracking-wider">Interactive Playground</span>
-                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Fun & Interactive Mini-Games</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">Take a quick mental break with our built-in browser games.</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Game 1: Speed Clicker -->
-                <div class="glass-card p-6 border-amber-500/30 bg-amber-500/5 space-y-4 flex flex-col justify-between">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h2 class="font-display font-bold text-lg text-white"><i class="fa-solid fa-stopwatch mr-1.5 text-amber-400"></i> Speed Clicker</h2>
-                            <span class="text-xs font-mono text-amber-400" id="clickTimer">10s</span>
-                        </div>
-                        <p class="text-xs text-gray-400">Test your reflex speed by tapping as fast as possible within 10 seconds.</p>
-                        <div class="text-center py-4 bg-universe-900 rounded-lg border border-white/5">
-                            <span class="block text-xs text-gray-500">SCORE</span>
-                            <span class="font-display font-extrabold text-3xl text-amber-400" id="clickScore">0</span>
-                        </div>
-                    </div>
-                    <button id="clickGameBtn" onclick="clickGameTap()" class="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-bold text-xs transition-transform active:scale-95">
-                        START CLICKING!
-                    </button>
-                </div>
-
-                <!-- Game 2: Tech Memory Match -->
-                <div class="glass-card p-6 border-universe-accent/30 bg-universe-accent/5 space-y-4 flex flex-col justify-between">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h2 class="font-display font-bold text-lg text-white"><i class="fa-solid fa-brain mr-1.5 text-universe-accent"></i> Memory Match</h2>
-                            <span class="text-xs font-mono text-universe-accent" id="memoryStatus">Find Pairs</span>
-                        </div>
-                        <p class="text-xs text-gray-400">Flip cards to match tech icon pairs.</p>
-                        <div class="grid grid-cols-4 gap-2 h-36" id="memoryGrid">
-                            <!-- Dynamic Cards -->
-                        </div>
-                    </div>
-                    <button onclick="resetMemoryGame()" class="w-full py-2.5 rounded-xl bg-universe-accent hover:bg-violet-500 text-white font-bold text-xs">
-                        Reset Game Board
-                    </button>
-                </div>
-
-                <!-- Game 3: AI & Tech Quiz -->
-                <div class="glass-card p-6 border-universe-cyan/30 bg-universe-cyan/5 space-y-4 flex flex-col justify-between">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h2 class="font-display font-bold text-lg text-white"><i class="fa-solid fa-circle-question mr-1.5 text-universe-cyan"></i> Tech & STEM Quiz</h2>
-                            <span class="text-xs font-mono text-universe-cyan" id="quizScoreText">Score: 0</span>
-                        </div>
-                        <p class="text-xs text-gray-400" id="quizQuestion">Question loading...</p>
-                        <div class="space-y-1.5" id="quizOptions">
-                            <!-- Dynamic quiz choices -->
-                        </div>
-                    </div>
-                    <button onclick="nextQuizQuestion()" class="w-full py-2.5 rounded-xl bg-universe-cyan hover:bg-cyan-400 text-black font-bold text-xs">
-                        Next Question
-                    </button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-universe-900 border-t border-white/10 py-10 z-10 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-sm">
-                    <i class="fa-solid fa-atom"></i>
-                </div>
-                <span class="font-display font-bold text-sm text-white">TrustInUniverse</span>
-                <span class="text-xs text-gray-500">&copy; 2026. All rights reserved.</span>
-            </div>
-            <div class="flex items-center gap-6 text-xs text-gray-400">
-                <a href="#page-home" class="hover:text-white">Home</a>
-                <a href="#page-content" class="hover:text-white">Content Guide</a>
-                <a href="#page-education" class="hover:text-white">STEM Hub</a>
-                <a href="#page-projects" class="hover:text-white">Projects</a>
-                <a href="#page-tools" class="hover:text-white">Directory</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- MODAL 1: SUBMIT PROJECT MODAL -->
-    <div id="submitProjectModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-6 space-y-4 border-universe-accent/50 bg-universe-800">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                <h3 class="font-display font-bold text-lg text-white"><i class="fa-solid fa-code-commit mr-2 text-universe-accent"></i> Submit Project / Idea</h3>
-                <button onclick="closeModal('submitProjectModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
-            </div>
-            <form onsubmit="handleProjectSubmit(event)" class="space-y-3">
-                <div>
-                    <label class="block text-xs text-gray-300 mb-1">Project Title</label>
-                    <input type="text" required id="projTitle" placeholder="e.g. Neural Vision Engine" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-300 mb-1">Category / Tech Stack</label>
-                    <input type="text" required id="projCategory" placeholder="e.g. Python, AI, WebAssembly" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-300 mb-1">GitHub Repository or Live Demo URL</label>
-                    <input type="url" required id="projUrl" placeholder="https://github.com/username/repo" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
-                </div>
-                <div>
-                    <label class="block text-xs text-gray-300 mb-1">Brief Description</label>
-                    <textarea required id="projDesc" rows="3" placeholder="Explain what your project accomplishes..." class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent"></textarea>
-                </div>
-                <div class="pt-2 flex justify-end gap-2">
-                    <button type="button" onclick="closeModal('submitProjectModal')" class="px-4 py-2 rounded-lg bg-universe-700 text-xs text-gray-300 font-bold">Cancel</button>
-                    <button type="submit" class="px-5 py-2 rounded-lg gradient-bg text-xs text-white font-bold">Submit to Platform</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- MODAL 2: QUICK START MODAL -->
-    <div id="quickStartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-card max-w-md w-full p-6 space-y-4 bg-universe-800">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                <h3 class="font-display font-bold text-lg text-white"><i class="fa-solid fa-rocket mr-2 text-universe-accent"></i> Welcome to TrustInUniverse</h3>
-                <button onclick="closeModal('quickStartModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
-            </div>
-            <p class="text-xs text-gray-300 leading-relaxed">
-                Select your primary goal to jump straight into specialized modules:
-            </p>
-            <div class="space-y-2">
-                <a href="#page-content" onclick="closeModal('quickStartModal')" class="block w-full p-3 rounded-xl bg-universe-700 hover:bg-universe-600 border border-white/5 flex items-center gap-3 text-left">
-                    <i class="fa-solid fa-video text-universe-accent text-lg"></i>
-                    <div>
-                        <span class="block font-bold text-xs text-white">Create & Edit Content</span>
-                        <span class="block text-[10px] text-gray-400">Scripts, hooks, and editing timelines</span>
-                    </div>
-                </a>
-                <a href="#page-education" onclick="closeModal('quickStartModal')" class="block w-full p-3 rounded-xl bg-universe-700 hover:bg-universe-600 border border-white/5 flex items-center gap-3 text-left">
-                    <i class="fa-solid fa-graduation-cap text-universe-cyan text-lg"></i>
-                    <div>
-                        <span class="block font-bold text-xs text-white">Learn STEM & Prompting</span>
-                        <span class="block text-[10px] text-gray-400">Physics solver & full-stack roadmaps</span>
-                    </div>
-                </a>
-                <a href="#page-projects" onclick="closeModal('quickStartModal')" class="block w-full p-3 rounded-xl bg-universe-700 hover:bg-universe-600 border border-white/5 flex items-center gap-3 text-left">
-                    <i class="fa-solid fa-code text-universe-pink text-lg"></i>
-                    <div>
-                        <span class="block font-bold text-xs text-white">Build & View Projects</span>
-                        <span class="block text-[10px] text-gray-400">Open source repos and uploads</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 3: GUIDE PREVIEW MODAL -->
-    <div id="guideModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-6 space-y-4 bg-universe-800">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                <h3 class="font-display font-bold text-lg text-white" id="guideModalTitle">Guide Details</h3>
-                <button onclick="closeModal('guideModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
-            </div>
-            <div id="guideModalBody" class="text-xs text-gray-300 leading-relaxed space-y-2">
-                <!-- Dynamic text content -->
-            </div>
-            <div class="pt-2 flex justify-end">
-                <button onclick="closeModal('guideModal')" class="px-5 py-2 rounded-lg gradient-bg text-xs text-white font-bold">Got It</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Active Navigation Highlight on Scroll
-        const sections = document.querySelectorAll('section');
-        const navBtns = document.querySelectorAll('.nav-btn');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navBtns.forEach(btn => {
-                btn.classList.remove('bg-universe-accent', 'text-white', 'shadow-md');
-                btn.classList.add('text-gray-300');
-                if (btn.getAttribute('href') === '#' + current) {
-                    btn.classList.add('bg-universe-accent', 'text-white', 'shadow-md');
-                    btn.classList.remove('text-gray-300');
-                }
-            });
-        });
-
-        // MOBILE MENU TOGGLE
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // MODAL HELPERS
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-
-        // CONTENT PAGE: HOOK GENERATOR
-        function generateHook() {
-            const niche = document.getElementById('hookNiche').value;
-            const topic = document.getElementById('hookTopic').value || "this topic";
-            const output = document.getElementById('hookOutput');
-            
-            let hooks = [];
-            if(niche === 'tech') {
-                hooks = [
-                    `"Stop learning ${topic} the wrong way in 2026—here is the 3-step exact roadmap."`,
-                    `"90% of developers fail at ${topic} because they miss this single core rule..."`,
-                    `"I built a real project using ${topic} in 24 hours, and here is what happened."`
-                ];
-            } else if(niche === 'education') {
-                hooks = [
-                    `"How to master ${topic} faster than 99% of students using active recall."`,
-                    `"The secret equation behind ${topic} explained in 60 seconds flat."`,
-                    `"Why your textbooks are wrong about ${topic}."`
-                ];
-            } else {
-                hooks = [
-                    `"How to monetize content around ${topic} without having millions of followers."`,
-                    `"The exact editing trick that gained 100k views on ${topic}."`,
-                    `"If you want to grow an audience around ${topic}, start doing this today."`
-                ];
-            }
-
-            output.innerHTML = hooks.map((h, i) => `<p>${i+1}. ${h}</p>`).join('');
-            output.classList.remove('hidden');
-        }
-
-        // CONTENT PAGE: GUIDE MODAL
-        function openGuideModal(title) {
-            document.getElementById('guideModalTitle').innerText = title;
-            document.getElementById('guideModalBody').innerHTML = `
-                <p><strong>Overview:</strong> Mastering ${title} is crucial for scaling retention and building high-value video assets.</p>
-                <p><strong>Core Step 1:</strong> Always structure content around intent and immediate clarity.</p>
-                <p><strong>Core Step 2:</strong> Maintain visually engaging pacing every 3-5 seconds with motion cuts or graphics.</p>
-                <p><strong>Core Step 3:</strong> End with strong retention triggers that lead directly to additional resources or subscribe actions.</p>
-            `;
-            openModal('guideModal');
-        }
-
-        // EDUCATION PAGE: KINEMATICS CALCULATOR
-        function calculateKinematics() {
-            const u = parseFloat(document.getElementById('calcU').value) || 0;
-            const a = parseFloat(document.getElementById('calcA').value) || 0;
-            const t = parseFloat(document.getElementById('calcT').value) || 0;
-
-            const v = u + (a * t);
-            const s = (u * t) + (0.5 * a * t * t);
-
-            const resDiv = document.getElementById('calcResult');
-            resDiv.innerHTML = `
-                <p class="text-universe-cyan">Final Velocity (v = u + at): <strong>${v.toFixed(2)} m/s</strong></p>
-                <p class="text-universe-pink">Total Displacement (s = ut + ½at²): <strong>${s.toFixed(2)} meters</strong></p>
-            `;
-            resDiv.classList.remove('hidden');
-        }
-
-        // PROJECTS PAGE: COMMUNITY SUBMISSION
-        function handleProjectSubmit(e) {
-            e.preventDefault();
-            const title = document.getElementById('projTitle').value;
-            const cat = document.getElementById('projCategory').value;
-            const url = document.getElementById('projUrl').value;
-            const desc = document.getElementById('projDesc').value;
-
-            const container = document.getElementById('communityProjectsContainer');
-            const newCard = document.createElement('div');
-            newCard.className = "glass-card p-4 border-universe-accent/30 bg-universe-accent/5 flex flex-col justify-between space-y-2";
-            newCard.innerHTML = `
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <h3 class="font-bold text-sm text-white">${title}</h3>
-                        <span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-0.5 rounded">${cat}</span>
-                    </div>
-                    <p class="text-xs text-gray-400">${desc}</p>
-                </div>
-                <div class="text-[10px] text-gray-500 pt-2 flex items-center justify-between border-t border-white/5">
-                    <a href="${url}" target="_blank" class="text-universe-cyan hover:underline">View Source Link &rarr;</a>
-                    <span class="text-universe-emerald font-mono">Live</span>
-                </div>
-            `;
-            container.prepend(newCard);
-
-            closeModal('submitProjectModal');
-            e.target.reset();
-            alert("Project successfully published to the community showcase!");
-        }
-
-        // DIRECTORY PAGE: FILTER
-        function filterDirectory(cat, evt) {
-            document.querySelectorAll('.dir-filter').forEach(btn => {
-                btn.classList.remove('bg-universe-emerald', 'text-black');
-                btn.classList.add('bg-universe-800', 'text-gray-300');
-            });
-            if (evt && evt.target) {
-                evt.target.classList.add('bg-universe-emerald', 'text-black');
-                evt.target.classList.remove('bg-universe-800', 'text-gray-300');
-            }
-
-            document.querySelectorAll('.tool-item').forEach(item => {
-                if(cat === 'all' || item.dataset.cat === cat) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        }
-
-        // GAMES ZONE 1: SPEED CLICKER
-        let clickScore = 0;
-        let clickActive = false;
-        let clickTimeLeft = 10;
-        let clickInterval = null;
-
-        function clickGameTap() {
-            const btn = document.getElementById('clickGameBtn');
-            if(!clickActive && clickTimeLeft === 10) {
-                clickActive = true;
-                clickScore = 1;
-                btn.innerText = "TAP TAP TAP!";
-                document.getElementById('clickScore').innerText = clickScore;
-                
-                clickInterval = setInterval(() => {
-                    clickTimeLeft--;
-                    document.getElementById('clickTimer').innerText = clickTimeLeft + 's';
-                    if(clickTimeLeft <= 0) {
-                        clearInterval(clickInterval);
-                        clickActive = false;
-                        btn.innerText = "PLAY AGAIN";
-                        alert("Time's up! Final Score: " + clickScore + " clicks!");
-                        clickTimeLeft = 10;
-                    }
-                }, 1000);
-            } else if(clickActive) {
-                clickScore++;
-                document.getElementById('clickScore').innerText = clickScore;
-            }
-        }
-
-        // GAMES ZONE 2: TECH MEMORY MATCH
-        const icons = ['fa-atom', 'fa-code', 'fa-robot', 'fa-brain', 'fa-atom', 'fa-code', 'fa-robot', 'fa-brain'];
-        let flippedCards = [];
-        let matchedPairs = 0;
-
-        function resetMemoryGame() {
-            const grid = document.getElementById('memoryGrid');
-            grid.innerHTML = '';
-            flippedCards = [];
-            matchedPairs = 0;
-            document.getElementById('memoryStatus').innerText = "Find Pairs";
-
-            const shuffled = [...icons].sort(() => 0.5 - Math.random());
-            shuffled.forEach((icon, index) => {
-                const card = document.createElement('div');
-                card.className = 'memory-card h-14';
-                card.dataset.icon = icon;
-                card.innerHTML = `
-                    <div class="memory-card-inner">
-                        <div class="memory-card-front text-gray-500 text-xs"><i class="fa-solid fa-question"></i></div>
-                        <div class="memory-card-back text-universe-accent text-base"><i class="fa-solid ${icon}"></i></div>
-                    </div>
-                `;
-                card.onclick = () => flipMemoryCard(card);
-                grid.appendChild(card);
-            });
-        }
-
-        function flipMemoryCard(card) {
-            if (flippedCards.length < 2 && !card.classList.contains('flipped')) {
-                card.classList.add('flipped');
-                flippedCards.push(card);
-
-                if (flippedCards.length === 2) {
-                    if (flippedCards[0].dataset.icon === flippedCards[1].dataset.icon) {
-                        matchedPairs++;
-                        flippedCards = [];
-                        if (matchedPairs === 4) {
-                            document.getElementById('memoryStatus').innerText = "You Won!";
-                        }
-                    } else {
-                        setTimeout(() => {
-                            flippedCards[0].classList.remove('flipped');
-                            flippedCards[1].classList.remove('flipped');
-                            flippedCards = [];
-                        }, 800);
-                    }
-                }
-            }
-        }
-
-        // GAMES ZONE 3: TECH QUIZ
-        const quizData = [
-            {
-                q: "What does 'LUFS' measure in audio editing?",
-                options: ["Loudness Units Full Scale", "Light Frequency Spectrum", "Linear Ultrasound Field"],
-                correct: 0
-            },
-            {
-                q: "Which kinematic equation calculates displacement?",
-                options: ["F = ma", "s = ut + ½at²", "E = mc²"],
-                correct: 1
-            },
-            {
-                q: "What is the primary role of system prompts in LLMs?",
-                options: ["Render HTML", "Define agent behavior & constraints", "Speed up GPU clock"],
-                correct: 1
-            }
-        ];
-        let currentQuizIndex = 0;
-        let quizScore = 0;
-
-        function renderQuiz() {
-            const q = quizData[currentQuizIndex];
-            document.getElementById('quizQuestion').innerText = `${currentQuizIndex + 1}. ${q.q}`;
-            const optContainer = document.getElementById('quizOptions');
-            optContainer.innerHTML = '';
-            q.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = "w-full text-left p-2 rounded bg-universe-900 hover:bg-universe-700 text-xs text-gray-300 transition-colors";
-                btn.innerText = opt;
-                btn.onclick = () => checkQuizAnswer(idx);
-                optContainer.appendChild(btn);
-            });
-        }
-
-        function checkQuizAnswer(selected) {
-            if(selected === quizData[currentQuizIndex].correct) {
-                quizScore += 10;
-                document.getElementById('quizScoreText').innerText = "Score: " + quizScore;
-                alert("Correct Answer!");
-            } else {
-                alert("Incorrect!");
-            }
-            nextQuizQuestion();
-        }
-
-        function nextQuizQuestion() {
-            currentQuizIndex = (currentQuizIndex + 1) % quizData.length;
-            renderQuiz();
-        }
-
-        // INITIALIZE ON LOAD
-        window.addEventListener('DOMContentLoaded', () => {
-            resetMemoryGame();
-            renderQuiz();
-        });
-    </script>
+
+<body class="relative min-h-screen">
+
+<div class="progress-line" id="progressLine"></div>
+<div class="ambient-glow top-0 left-1/2 -translate-x-1/2"></div>
+<div class="ambient-glow top-1/2 right-0"></div>
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 bg-universe-900/90 backdrop-blur-md border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+<a href="#page-home" class="flex items-center gap-3 group">
+<div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-universe-accent/30 group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-atom"></i>
+</div>
+<div>
+<span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-universe-accent transition-colors">TrustInUniverse</span>
+<span class="block text-xs text-gray-400 font-medium">Extraordinary Hub</span>
+</div>
+</a>
+
+<nav class="hidden lg:flex items-center gap-1 bg-universe-800/80 p-1.5 rounded-full border border-white/5">
+<a href="#page-home" id="nav-home" class="nav-btn active px-4 py-2 rounded-full text-xs font-bold">Home</a>
+<a href="#page-content" id="nav-content" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300"><i class="fa-solid fa-clapperboard mr-1.5 text-universe-accent"></i>Content</a>
+<a href="#page-education" id="nav-education" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300"><i class="fa-solid fa-graduation-cap mr-1.5 text-universe-cyan"></i>STEM</a>
+<a href="#page-projects" id="nav-projects" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300"><i class="fa-solid fa-cubes mr-1.5 text-universe-pink"></i>Projects</a>
+<a href="#page-tools" id="nav-tools" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300"><i class="fa-solid fa-compass mr-1.5 text-universe-emerald"></i>Directory</a>
+<a href="#page-games" id="nav-games" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-gray-300"><i class="fa-solid fa-gamepad mr-1.5 text-amber-400"></i>Games</a>
+</nav>
+
+<div class="hidden sm:flex items-center gap-3">
+<div class="hidden xl:flex items-center gap-2 text-[10px] text-gray-400">
+<span class="pulse-dot"></span> SYSTEM ONLINE
+</div>
+<button onclick="openModal('quickStartModal')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold shadow-lg">
+<i class="fa-solid fa-rocket mr-2"></i>Get Started
+</button>
+</div>
+
+<button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300">
+<i class="fa-solid fa-bars text-2xl"></i>
+</button>
+</div>
+
+<div id="mobileMenu" class="hidden lg:hidden border-b border-white/10 bg-universe-800 px-4 py-4 space-y-2">
+<a href="#page-home" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-xs font-bold">Home Overview</a>
+<a href="#page-content" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300">Content Creation</a>
+<a href="#page-education" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300">STEM & Education</a>
+<a href="#page-projects" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300">Projects Portal</a>
+<a href="#page-tools" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300">AI / Jobs / Research</a>
+<a href="#page-games" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-lg text-xs font-bold text-gray-300">Games Zone</a>
+</div>
+</header>
+
+<main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10 space-y-24">
+
+<!-- HOME -->
+<section id="page-home" class="scroll-mt-24 space-y-16">
+
+<div class="text-center max-w-5xl mx-auto pt-8 space-y-6 reveal">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-universe-accent/10 border border-universe-accent/30 text-universe-accent text-xs font-bold uppercase">
+<i class="fa-solid fa-sparkles"></i> The All-In-One Extraordinary Platform
+</div>
+
+<h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+Explore, Learn, Build & Master
+<br>
+<span class="gradient-text">The Modern Digital World</span>
+</h1>
+
+<p class="text-base sm:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
+A multi-dimensional platform bridging Content Creation, Academic STEM, real-world Projects, AI tools, Research, Remote Careers and interactive gaming.
+</p>
+
+<div class="flex flex-wrap justify-center gap-4 pt-2">
+<a href="#page-projects" class="px-7 py-3.5 rounded-xl gradient-bg text-white font-bold text-xs shadow-xl">
+<i class="fa-solid fa-code-branch mr-2"></i>Open Project Hub
+</a>
+<a href="#page-tools" class="px-7 py-3.5 rounded-xl bg-universe-700 border border-white/10 text-white font-bold text-xs">
+<i class="fa-solid fa-layer-group mr-2"></i>Browse 20+ Tools
+</a>
+<a href="#page-games" class="px-7 py-3.5 rounded-xl bg-universe-700 border border-white/10 text-white font-bold text-xs">
+<i class="fa-solid fa-gamepad mr-2"></i>Enter Games
+</a>
+</div>
+</div>
+
+<!-- LIVE STATS -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+<div class="glass-card p-5 text-center">
+<i class="fa-solid fa-layer-group text-universe-accent text-xl"></i>
+<div class="stat-number text-2xl mt-2">6+</div>
+<div class="text-[10px] text-gray-500 uppercase">Major Hubs</div>
+</div>
+<div class="glass-card p-5 text-center">
+<i class="fa-solid fa-compass text-universe-emerald text-xl"></i>
+<div class="stat-number text-2xl mt-2">20+</div>
+<div class="text-[10px] text-gray-500 uppercase">Curated Tools</div>
+</div>
+<div class="glass-card p-5 text-center">
+<i class="fa-solid fa-code text-universe-cyan text-xl"></i>
+<div class="stat-number text-2xl mt-2">∞</div>
+<div class="text-[10px] text-gray-500 uppercase">Projects</div>
+</div>
+<div class="glass-card p-5 text-center">
+<i class="fa-solid fa-bolt text-amber-400 text-xl"></i>
+<div class="stat-number text-2xl mt-2">LIVE</div>
+<div class="text-[10px] text-gray-500 uppercase">Interactive Hub</div>
+</div>
+</div>
+
+<!-- ECOSYSTEM -->
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<h2 class="font-display font-bold text-2xl text-white">Platform Ecosystem Overview</h2>
+<span class="text-xs text-gray-400">Explore everything ↓</span>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+<div class="glass-card p-6 flex flex-col justify-between space-y-4 group reveal">
+<div>
+<div class="w-12 h-12 rounded-xl bg-universe-accent/10 border border-universe-accent/20 flex items-center justify-center text-universe-accent text-2xl">
+<i class="fa-solid fa-clapperboard"></i>
+</div>
+<h3 class="font-display font-bold text-xl text-white mt-3">Content Creation Roadmap</h3>
+<p class="text-gray-400 text-xs leading-relaxed mt-2">Complete production playbook covering viral hooks, scripting, editing, thumbnails and multi-platform growth.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-1 rounded">Scriptwriting</span>
+<span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-1 rounded">Hooks</span>
+<span class="text-[10px] bg-universe-accent/20 text-universe-accent px-2 py-1 rounded">Editing</span>
+</div>
+</div>
+<a href="#page-content" class="w-full py-2.5 rounded-xl bg-universe-accent/20 border border-universe-accent/40 text-white text-xs font-bold text-center">Explore Full Hub ↓</a>
+</div>
+
+<div class="glass-card p-6 flex flex-col justify-between space-y-4 group reveal">
+<div>
+<div class="w-12 h-12 rounded-xl bg-universe-cyan/10 border border-universe-cyan/20 flex items-center justify-center text-universe-cyan text-2xl">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+<h3 class="font-display font-bold text-xl text-white mt-3">STEM & Education Hub</h3>
+<p class="text-gray-400 text-xs leading-relaxed mt-2">Interactive physics tools, mathematics, web development, programming and prompt engineering.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-[10px] bg-universe-cyan/20 text-universe-cyan px-2 py-1 rounded">Kinematics</span>
+<span class="text-[10px] bg-universe-cyan/20 text-universe-cyan px-2 py-1 rounded">Web Dev</span>
+<span class="text-[10px] bg-universe-cyan/20 text-universe-cyan px-2 py-1 rounded">AI</span>
+</div>
+</div>
+<a href="#page-education" class="w-full py-2.5 rounded-xl bg-universe-cyan/20 border border-universe-cyan/40 text-white text-xs font-bold text-center">Explore Full Hub ↓</a>
+</div>
+
+<div class="glass-card p-6 flex flex-col justify-between space-y-4 group reveal">
+<div>
+<div class="w-12 h-12 rounded-xl bg-universe-pink/10 border border-universe-pink/20 flex items-center justify-center text-universe-pink text-2xl">
+<i class="fa-solid fa-cubes"></i>
+</div>
+<h3 class="font-display font-bold text-xl text-white mt-3">Real Projects & Open Source</h3>
+<p class="text-gray-400 text-xs leading-relaxed mt-2">Explore real-world builds, open-source repositories, community submissions and project ideas.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-[10px] bg-universe-pink/20 text-universe-pink px-2 py-1 rounded">Open Source</span>
+<span class="text-[10px] bg-universe-pink/20 text-universe-pink px-2 py-1 rounded">Showcase</span>
+<span class="text-[10px] bg-universe-pink/20 text-universe-pink px-2 py-1 rounded">Community</span>
+</div>
+</div>
+<a href="#page-projects" class="w-full py-2.5 rounded-xl bg-universe-pink/20 border border-universe-pink/40 text-white text-xs font-bold text-center">Explore Full Hub ↓</a>
+</div>
+
+<div class="glass-card p-6 flex flex-col justify-between space-y-4 group reveal">
+<div>
+<div class="w-12 h-12 rounded-xl bg-universe-emerald/10 border border-universe-emerald/20 flex items-center justify-center text-universe-emerald text-2xl">
+<i class="fa-solid fa-compass"></i>
+</div>
+<h3 class="font-display font-bold text-xl text-white mt-3">Expanded Web Directory</h3>
+<p class="text-gray-400 text-xs leading-relaxed mt-2">AI, computer vision, speech, remote careers, freelancing and academic research platforms.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-[10px] bg-universe-emerald/20 text-universe-emerald px-2 py-1 rounded">20+ Tools</span>
+<span class="text-[10px] bg-universe-emerald/20 text-universe-emerald px-2 py-1 rounded">Jobs</span>
+<span class="text-[10px] bg-universe-emerald/20 text-universe-emerald px-2 py-1 rounded">Research</span>
+</div>
+</div>
+<a href="#page-tools" class="w-full py-2.5 rounded-xl bg-universe-emerald/20 border border-universe-emerald/40 text-white text-xs font-bold text-center">Explore Full Hub ↓</a>
+</div>
+
+<div class="glass-card p-6 flex flex-col justify-between space-y-4 group reveal">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl">
+<i class="fa-solid fa-gamepad"></i>
+</div>
+<h3 class="font-display font-bold text-xl text-white mt-3">Fun & Interactive Games</h3>
+<p class="text-gray-400 text-xs leading-relaxed mt-2">Brain games, memory challenges, STEM quizzes and future competitive gaming experiences.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-[10px] bg-amber-400/20 text-amber-400 px-2 py-1 rounded">Clicker</span>
+<span class="text-[10px] bg-amber-400/20 text-amber-400 px-2 py-1 rounded">Memory</span>
+<span class="text-[10px] bg-amber-400/20 text-amber-400 px-2 py-1 rounded">Quiz</span>
+</div>
+</div>
+<a href="#page-games" class="w-full py-2.5 rounded-xl bg-amber-400/20 border border-amber-400/40 text-white text-xs font-bold text-center">Enter Games ↓</a>
+</div>
+
+<div class="glass-card p-6 flex flex-col justify-between space-y-4 group border-universe-accent/30 bg-universe-accent/5 reveal">
+<div>
+<div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-2xl">
+<i class="fa-solid fa-paper-plane"></i>
+</div>
+<h3 class="font-display font-bold text-xl text-white mt-3">Submit Innovation</h3>
+<p class="text-gray-400 text-xs leading-relaxed mt-2">Submit your project, repository, idea or experiment and become part of the growing ecosystem.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-[10px] bg-white/10 text-white px-2 py-1 rounded">Community</span>
+<span class="text-[10px] bg-white/10 text-white px-2 py-1 rounded">Instant Listing</span>
+</div>
+</div>
+<button onclick="openModal('submitProjectModal')" class="w-full py-2.5 rounded-xl gradient-bg text-white text-xs font-bold">Submit Project Now +</button>
+</div>
+
+</div>
+</div>
+
+<!-- QUICK ACCESS -->
+<div class="glass-card p-6 reveal">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="text-universe-accent text-[10px] font-bold uppercase tracking-widest">Quick Access</span>
+<h2 class="font-display font-bold text-2xl text-white mt-1">Where do you want to go?</h2>
+</div>
+<div class="flex flex-wrap gap-2">
+<a href="#page-content" class="px-4 py-2 rounded-lg bg-universe-700 text-xs font-bold">Create</a>
+<a href="#page-education" class="px-4 py-2 rounded-lg bg-universe-700 text-xs font-bold">Learn</a>
+<a href="#page-projects" class="px-4 py-2 rounded-lg bg-universe-700 text-xs font-bold">Build</a>
+<a href="#page-tools" class="px-4 py-2 rounded-lg bg-universe-700 text-xs font-bold">Discover</a>
+<a href="#page-games" class="px-4 py-2 rounded-lg bg-universe-700 text-xs font-bold">Play</a>
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- CONTENT -->
+<section id="page-content" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
+
+<div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<a href="#page-home" class="text-xs text-universe-accent mb-2 inline-flex items-center gap-1"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+<span class="block text-universe-accent font-bold text-xs uppercase tracking-wider">Masterclass & Tools</span>
+<h1 class="font-display text-3xl font-extrabold text-white mt-1">Content Creation & Audience Growth Guide</h1>
+<p class="text-gray-400 text-xs sm:text-sm mt-1">End-to-end strategy from hook generation to editing timelines and algorithm mechanics.</p>
+</div>
+<button onclick="openGuideModal('Scriptwriting Framework')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold">Download Script Template</button>
+</div>
+
+<div class="glass-card p-6 border-universe-accent/40 bg-universe-accent/5 space-y-4 reveal">
+<div class="flex items-center gap-2 text-universe-accent font-bold font-display text-lg"><i class="fa-solid fa-wand-magic-sparkles"></i> Interactive Hook Generator</div>
+<p class="text-xs text-gray-300">Choose a niche and topic to generate high-retention hook ideas.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<select id="hookNiche" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<option value="tech">Tech & Coding</option>
+<option value="education">Education & STEM</option>
+<option value="creator">Creator & Monetization</option>
+</select>
+<input id="hookTopic" placeholder="e.g. Learning Python in 2026" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<button onclick="generateHook()" class="py-2.5 px-4 rounded-lg gradient-bg text-white font-bold text-xs">Generate Hooks</button>
+</div>
+<div id="hookOutput" class="hidden p-4 bg-universe-900 rounded-lg border border-white/10 text-xs text-universe-cyan font-mono space-y-2"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+<div class="glass-card p-6 space-y-4 reveal">
+<div class="flex items-center gap-3"><span class="w-8 h-8 rounded-lg bg-universe-accent/20 text-universe-accent flex items-center justify-center font-bold">1</span><h2 class="font-display font-bold text-xl text-white">YouTube Scriptwriting & Hook Psychology</h2></div>
+<p class="text-gray-400 text-xs leading-relaxed">Build stronger videos using Hook-Story-Offer structure and immediate audience intent.</p>
+<div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 text-xs text-gray-300"><b class="text-universe-accent">Hook-Story-Offer:</b><br>State a high-stakes problem, deliver value and finish with a focused CTA.</div>
+<button onclick="openGuideModal('YouTube Scriptwriting & Hook Psychology')" class="w-full py-2.5 rounded-lg bg-universe-700 text-white text-xs font-bold">Read Full Scripting Guide</button>
+</div>
+
+<div class="glass-card p-6 space-y-4 reveal">
+<div class="flex items-center gap-3"><span class="w-8 h-8 rounded-lg bg-universe-cyan/20 text-universe-cyan flex items-center justify-center font-bold">2</span><h2 class="font-display font-bold text-xl text-white">Video Editing Timelines</h2></div>
+<p class="text-gray-400 text-xs leading-relaxed">Premiere, CapCut and DaVinci workflows designed around pacing and retention.</p>
+<div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 text-xs text-gray-300"><b class="text-universe-cyan">Sequence:</b><br>A-Roll → Audio → SFX → Motion Graphics → Captions.</div>
+<button onclick="openGuideModal('Video Editing Workflow')" class="w-full py-2.5 rounded-lg bg-universe-700 text-white text-xs font-bold">Explore Editing Presets</button>
+</div>
+
+<div class="glass-card p-6 space-y-4 reveal">
+<div class="flex items-center gap-3"><span class="w-8 h-8 rounded-lg bg-universe-pink/20 text-universe-pink flex items-center justify-center font-bold">3</span><h2 class="font-display font-bold text-xl text-white">Thumbnail Design & CTR</h2></div>
+<p class="text-gray-400 text-xs leading-relaxed">Learn focal points, contrast, visual hierarchy and concise thumbnail messaging.</p>
+<div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 text-xs text-gray-300"><b class="text-universe-pink">Rule:</b><br>Keep the visual message simple, bold and instantly understandable.</div>
+<button onclick="openGuideModal('Thumbnail Design & CTR Optimization')" class="w-full py-2.5 rounded-lg bg-universe-700 text-white text-xs font-bold">Study Thumbnail Cases</button>
+</div>
+
+<div class="glass-card p-6 space-y-4 reveal">
+<div class="flex items-center gap-3"><span class="w-8 h-8 rounded-lg bg-universe-emerald/20 text-universe-emerald flex items-center justify-center font-bold">4</span><h2 class="font-display font-bold text-xl text-white">Multi-Platform Growth</h2></div>
+<p class="text-gray-400 text-xs leading-relaxed">Understand cross-platform publishing and retention-focused content architecture.</p>
+<div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 text-xs text-gray-300"><b class="text-universe-emerald">Trigger:</b><br>Focus on completion, replay and seamless content loops.</div>
+<button onclick="openGuideModal('Multi-Platform Algorithm Virality')" class="w-full py-2.5 rounded-lg bg-universe-700 text-white text-xs font-bold">View Algorithm Playbook</button>
+</div>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="page-education" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
+
+<div class="border-b border-white/10 pb-6">
+<a href="#page-home" class="text-xs text-universe-accent mb-2 inline-flex items-center gap-1"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+<span class="block text-universe-cyan font-bold text-xs uppercase tracking-wider">Academic & Skills Hub</span>
+<h1 class="font-display text-3xl font-extrabold text-white mt-1">STEM, Web Dev & Prompt Engineering</h1>
+<p class="text-gray-400 text-sm mt-1">Interactive physics tools, engineering roadmaps and structured AI learning.</p>
+</div>
+
+<div class="glass-card p-6 border-universe-cyan/40 bg-universe-cyan/5 space-y-4 reveal">
+<div class="flex items-center gap-2 text-universe-cyan font-bold font-display text-lg"><i class="fa-solid fa-calculator"></i> Interactive Physics Solver: Kinematics</div>
+<p class="text-xs text-gray-300">Calculate final velocity and displacement dynamically.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<input type="number" id="calcU" value="0" placeholder="Initial velocity u" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<input type="number" id="calcA" value="9.8" placeholder="Acceleration a" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<input type="number" id="calcT" value="5" placeholder="Time t" class="bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+</div>
+<button onclick="calculateKinematics()" class="w-full py-2.5 rounded-lg bg-universe-cyan text-black font-bold text-xs">Compute Kinematic Values</button>
+<div id="calcResult" class="hidden p-4 bg-universe-900 rounded-lg border border-white/10 text-xs"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-6 space-y-3 reveal">
+<div class="w-10 h-10 rounded-lg bg-universe-cyan/20 text-universe-cyan flex items-center justify-center text-lg"><i class="fa-solid fa-square-root-variable"></i></div>
+<h3 class="font-display font-bold text-lg">STEM Physics & Calculus</h3>
+<p class="text-xs text-gray-400">Newtonian dynamics, calculus, thermodynamics and differential equations.</p>
+<ul class="text-xs text-gray-300 space-y-2"><li>→ Kinematics & Motion Laws</li><li>→ Integration & Derivatives</li><li>→ Electromagnetism</li><li>→ Problem Solving</li></ul>
+</div>
+
+<div class="glass-card p-6 space-y-3 reveal">
+<div class="w-10 h-10 rounded-lg bg-universe-accent/20 text-universe-accent flex items-center justify-center text-lg"><i class="fa-solid fa-code"></i></div>
+<h3 class="font-display font-bold text-lg">Full-Stack Development</h3>
+<p class="text-xs text-gray-400">HTML/CSS/JS → React → Node → APIs → Databases.</p>
+<ul class="text-xs text-gray-300 space-y-2"><li>→ Frontend Engineering</li><li>→ Backend Systems</li><li>→ Database Architecture</li><li>→ Deployment</li></ul>
+</div>
+
+<div class="glass-card p-6 space-y-3 reveal">
+<div class="w-10 h-10 rounded-lg bg-universe-pink/20 text-universe-pink flex items-center justify-center text-lg"><i class="fa-solid fa-robot"></i></div>
+<h3 class="font-display font-bold text-lg">Prompt Engineering</h3>
+<p class="text-xs text-gray-400">Build structured prompts using context, examples, roles and output constraints.</p>
+<ul class="text-xs text-gray-300 space-y-2"><li>→ Role-Task-Context</li><li>→ Few-Shot Learning</li><li>→ Structured JSON</li><li>→ AI Workflows</li></ul>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card p-6 reveal">
+<h3 class="font-display font-bold text-xl">Programming Learning Zone</h3>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">C</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">C++</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">Python</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">JavaScript</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">React</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">Node</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">SQL</span>
+<span class="bg-universe-800 p-3 rounded-lg text-center text-xs">Git</span>
+</div>
+</div>
+
+<div class="glass-card p-6 reveal">
+<h3 class="font-display font-bold text-xl">Future Learning Modules</h3>
+<div class="space-y-2 mt-4 text-xs text-gray-300">
+<div class="flex justify-between bg-universe-800 p-3 rounded-lg"><span>Cybersecurity</span><span class="text-universe-cyan">Coming Soon</span></div>
+<div class="flex justify-between bg-universe-800 p-3 rounded-lg"><span>Artificial Intelligence</span><span class="text-universe-cyan">Coming Soon</span></div>
+<div class="flex justify-between bg-universe-800 p-3 rounded-lg"><span>Electronics Lab</span><span class="text-universe-cyan">Coming Soon</span></div>
+<div class="flex justify-between bg-universe-800 p-3 rounded-lg"><span>Data Science</span><span class="text-universe-cyan">Coming Soon</span></div>
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="page-projects" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
+
+<div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<a href="#page-home" class="text-xs text-universe-accent mb-2 inline-flex items-center gap-1"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+<span class="block text-universe-pink font-bold text-xs uppercase tracking-wider">Build & Showcase</span>
+<h1 class="font-display text-3xl font-extrabold text-white mt-1">Real Projects & Open Source Hub</h1>
+<p class="text-gray-400 text-sm mt-1">Explore software builds, community contributions and world-class repositories.</p>
+</div>
+<button onclick="openModal('submitProjectModal')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold"><i class="fa-solid fa-plus mr-2"></i>Submit Your Project</button>
+</div>
+
+<div class="space-y-4">
+<h2 class="font-display font-bold text-xl">Featured Open-Source Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+<div class="glass-card p-5 space-y-3 reveal"><b class="text-universe-cyan">Linux Kernel</b><span class="block text-[10px] text-gray-400">C / Assembly</span><p class="text-xs text-gray-400">The core operating system kernel powering servers, Android and supercomputers.</p><a href="https://github.com/torvalds/linux" target="_blank" class="text-xs text-universe-accent">View GitHub Repository ↗</a></div>
+
+<div class="glass-card p-5 space-y-3 reveal"><b class="text-universe-accent">React UI Framework</b><span class="block text-[10px] text-gray-400">JavaScript / JSX</span><p class="text-xs text-gray-400">Component-based library for modern interactive interfaces.</p><a href="https://github.com/facebook/react" target="_blank" class="text-xs text-universe-accent">View GitHub Repository ↗</a></div>
+
+<div class="glass-card p-5 space-y-3 reveal"><b class="text-universe-emerald">OpenCV Vision</b><span class="block text-[10px] text-gray-400">C++ / Python</span><p class="text-xs text-gray-400">Computer vision and machine learning library for image processing.</p><a href="https://github.com/opencv/opencv" target="_blank" class="text-xs text-universe-accent">View GitHub Repository ↗</a></div>
+
+<div class="glass-card p-5 space-y-3 reveal"><b class="text-amber-400">TensorFlow</b><span class="block text-[10px] text-gray-400">Python / C++</span><p class="text-xs text-gray-400">Open-source platform for machine learning and neural networks.</p><a href="https://github.com/tensorflow/tensorflow" target="_blank" class="text-xs text-universe-accent">View GitHub Repository ↗</a></div>
+
+<div class="glass-card p-5 space-y-3 reveal"><b class="text-universe-pink">AutoGPT</b><span class="block text-[10px] text-gray-400">Python</span><p class="text-xs text-gray-400">Autonomous AI agent framework for complex multi-step tasks.</p><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" class="text-xs text-universe-accent">View GitHub Repository ↗</a></div>
+
+<div class="glass-card p-5 space-y-3 reveal"><b class="text-universe-cyan">VS Code Core</b><span class="block text-[10px] text-gray-400">TypeScript</span><p class="text-xs text-gray-400">Extensible open-source editor built on Electron and web technologies.</p><a href="https://github.com/microsoft/vscode" target="_blank" class="text-xs text-universe-accent">View GitHub Repository ↗</a></div>
+
+</div>
+</div>
+
+<div class="space-y-4 pt-6 border-t border-white/10">
+<div class="flex justify-between items-center">
+<h2 class="font-display font-bold text-xl">Community Submitted Projects</h2>
+<span class="text-xs text-gray-400">Live Showcase</span>
+</div>
+<div id="communityProjectsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="glass-card p-4 border-white/10">
+<h3 class="font-bold text-sm">AI Real-time Camera Filter</h3>
+<span class="text-[10px] text-universe-accent">Computer Vision</span>
+<p class="text-xs text-gray-400 mt-2">Browser-based facial landmark detection using WebAssembly and MediaPipe.</p>
+<div class="text-[10px] text-gray-500 mt-3 pt-2 border-t border-white/5">Submitted by: Community Creator · <span class="text-universe-cyan">Verified</span></div>
+</div>
+</div>
+</div>
+
+<div class="glass-card p-6 border-universe-pink/20 reveal">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-universe-pink/10 flex items-center justify-center text-universe-pink"><i class="fa-solid fa-lightbulb text-xl"></i></div>
+<div><h3 class="font-display font-bold">Project Ideas Lab</h3><p class="text-xs text-gray-400">Future project categories for the TrustInUniverse ecosystem.</p></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-5">
+<span class="bg-universe-800 p-3 rounded-lg text-xs text-center">AI Tools</span>
+<span class="bg-universe-800 p-3 rounded-lg text-xs text-center">Web Apps</span>
+<span class="bg-universe-800 p-3 rounded-lg text-xs text-center">Cybersecurity</span>
+<span class="bg-universe-800 p-3 rounded-lg text-xs text-center">Robotics</span>
+<span class="bg-universe-800 p-3 rounded-lg text-xs text-center">Games</span>
+</div>
+</div>
+
+</section>
+
+<!-- DIRECTORY -->
+<section id="page-tools" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
+
+<div class="border-b border-white/10 pb-6">
+<a href="#page-home" class="text-xs text-universe-accent mb-2 inline-flex items-center gap-1"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+<span class="block text-universe-emerald font-bold text-xs uppercase tracking-wider">Curated Web Catalog</span>
+<h1 class="font-display text-3xl font-extrabold text-white mt-1">Directory of AI, Remote Careers & Research</h1>
+<p class="text-gray-400 text-sm mt-1">20+ handpicked platforms for productivity, AI, jobs and academic research.</p>
+</div>
+
+<div class="flex flex-wrap gap-2">
+<button onclick="filterDirectory('all',event)" class="dir-filter bg-universe-emerald text-black px-4 py-2 rounded-lg text-xs font-bold">All Tools</button>
+<button onclick="filterDirectory('ai',event)" class="dir-filter bg-universe-800 text-gray-300 px-4 py-2 rounded-lg text-xs font-bold">AI & Vision</button>
+<button onclick="filterDirectory('jobs',event)" class="dir-filter bg-universe-800 text-gray-300 px-4 py-2 rounded-lg text-xs font-bold">Remote Careers</button>
+<button onclick="filterDirectory('research',event)" class="dir-filter bg-universe-800 text-gray-300 px-4 py-2 rounded-lg text-xs font-bold">Research</button>
+</div>
+
+<div class="mb-4">
+<input id="directorySearch" oninput="searchDirectory()" placeholder="Search directory..." class="w-full bg-universe-800 border border-white/10 rounded-xl p-3 text-xs text-white">
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="directoryGrid">
+
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>ChatGPT</b><span class="block text-[9px] text-universe-accent">AI LLM</span><p class="text-[11px] text-gray-400 mt-2">Conversational AI for reasoning, coding and creative tasks.</p><a href="https://chatgpt.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>Claude AI</b><span class="block text-[9px] text-universe-accent">AI LLM</span><p class="text-[11px] text-gray-400 mt-2">AI assistant focused on analysis and writing.</p><a href="https://claude.ai" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>Google Gemini</b><span class="block text-[9px] text-universe-accent">Multimodal AI</span><p class="text-[11px] text-gray-400 mt-2">Google's multimodal AI ecosystem.</p><a href="https://gemini.google.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>Midjourney</b><span class="block text-[9px] text-universe-pink">AI Image</span><p class="text-[11px] text-gray-400 mt-2">Generative AI for artistic and visual creation.</p><a href="https://midjourney.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>ElevenLabs</b><span class="block text-[9px] text-universe-pink">AI Audio</span><p class="text-[11px] text-gray-400 mt-2">Realistic voice generation and audio AI.</p><a href="https://elevenlabs.io" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>Perplexity AI</b><span class="block text-[9px] text-universe-cyan">AI Search</span><p class="text-[11px] text-gray-400 mt-2">AI-powered answer and research engine.</p><a href="https://perplexity.ai" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>RunwayML</b><span class="block text-[9px] text-universe-pink">AI Video</span><p class="text-[11px] text-gray-400 mt-2">Generative video creation and filmmaking tools.</p><a href="https://runwayml.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="ai"><b>Hugging Face</b><span class="block text-[9px] text-universe-accent">AI Models</span><p class="text-[11px] text-gray-400 mt-2">Open-source models, datasets and AI spaces.</p><a href="https://huggingface.co" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+
+<div class="glass-card p-4 tool-item" data-cat="jobs"><b>We Work Remotely</b><span class="block text-[9px] text-universe-emerald">Remote Jobs</span><p class="text-[11px] text-gray-400 mt-2">Global remote work listings.</p><a href="https://weworkremotely.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="jobs"><b>Remote OK</b><span class="block text-[9px] text-universe-emerald">Remote Jobs</span><p class="text-[11px] text-gray-400 mt-2">Remote tech and engineering jobs.</p><a href="https://remoteok.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="jobs"><b>Toptal</b><span class="block text-[9px] text-universe-emerald">Freelance</span><p class="text-[11px] text-gray-400 mt-2">Professional freelance network.</p><a href="https://toptal.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="jobs"><b>Wellfound</b><span class="block text-[9px] text-universe-emerald">Startups</span><p class="text-[11px] text-gray-400 mt-2">Startup jobs and company discovery.</p><a href="https://wellfound.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="jobs"><b>Upwork</b><span class="block text-[9px] text-universe-emerald">Gig Work</span><p class="text-[11px] text-gray-400 mt-2">Global freelancing marketplace.</p><a href="https://upwork.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="jobs"><b>FlexJobs</b><span class="block text-[9px] text-universe-emerald">Vetted Jobs</span><p class="text-[11px] text-gray-400 mt-2">Remote and flexible career listings.</p><a href="https://flexjobs.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+
+<div class="glass-card p-4 tool-item" data-cat="research"><b>arXiv.org</b><span class="block text-[9px] text-universe-cyan">Preprints</span><p class="text-[11px] text-gray-400 mt-2">Open-access scholarly research archive.</p><a href="https://arxiv.org" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="research"><b>Google Scholar</b><span class="block text-[9px] text-universe-cyan">Literature</span><p class="text-[11px] text-gray-400 mt-2">Search engine for academic literature.</p><a href="https://scholar.google.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="research"><b>Consensus AI</b><span class="block text-[9px] text-universe-cyan">Paper Search</span><p class="text-[11px] text-gray-400 mt-2">AI-powered scientific research search.</p><a href="https://consensus.app" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="research"><b>ResearchGate</b><span class="block text-[9px] text-universe-cyan">Academic Network</span><p class="text-[11px] text-gray-400 mt-2">Network for scientists and researchers.</p><a href="https://researchgate.net" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="research"><b>Papers With Code</b><span class="block text-[9px] text-universe-cyan">ML Papers</span><p class="text-[11px] text-gray-400 mt-2">Research papers connected with implementations.</p><a href="https://paperswithcode.com" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+<div class="glass-card p-4 tool-item" data-cat="research"><b>Semantic Scholar</b><span class="block text-[9px] text-universe-cyan">Research Engine</span><p class="text-[11px] text-gray-400 mt-2">AI-driven scientific literature discovery.</p><a href="https://semanticscholar.org" target="_blank" class="text-[11px] text-universe-cyan">Visit Platform ↗</a></div>
+
+</div>
+</section>
+
+<!-- GAMES -->
+<section id="page-games" class="scroll-mt-24 space-y-10 border-t border-white/10 pt-16">
+
+<div class="border-b border-white/10 pb-6">
+<a href="#page-home" class="text-xs text-universe-accent mb-2 inline-flex items-center gap-1"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+<span class="block text-amber-400 font-bold text-xs uppercase tracking-wider">Interactive Playground</span>
+<h1 class="font-display text-3xl font-extrabold text-white mt-1">Fun & Interactive Games</h1>
+<p class="text-gray-400 text-sm mt-1">Play, compete and test your brain.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+<div class="glass-card p-6 border-amber-500/30 bg-amber-500/5 space-y-4">
+<div class="flex justify-between"><h2 class="font-display font-bold text-lg"><i class="fa-solid fa-stopwatch text-amber-400 mr-2"></i>Speed Clicker</h2><span id="clickTimer" class="text-amber-400 font-mono">10s</span></div>
+<p class="text-xs text-gray-400">Tap as fast as possible within 10 seconds.</p>
+<div class="text-center py-5 bg-universe-900 rounded-lg"><span class="block text-xs text-gray-500">SCORE</span><span id="clickScore" class="font-display font-extrabold text-4xl text-amber-400">0</span></div>
+<button id="clickGameBtn" onclick="clickGameTap()" class="w-full py-3 rounded-xl bg-amber-400 text-black font-bold text-xs">START CLICKING!</button>
+</div>
+
+<div class="glass-card p-6 border-universe-accent/30 bg-universe-accent/5 space-y-4">
+<div class="flex justify-between"><h2 class="font-display font-bold text-lg"><i class="fa-solid fa-brain text-universe-accent mr-2"></i>Memory Match</h2><span id="memoryStatus" class="text-universe-accent text-xs">Find Pairs</span></div>
+<p class="text-xs text-gray-400">Flip cards and match the technology icons.</p>
+<div class="grid grid-cols-4 gap-2 h-36" id="memoryGrid"></div>
+<button onclick="resetMemoryGame()" class="w-full py-2.5 rounded-xl bg-universe-accent text-white font-bold text-xs">Reset Game Board</button>
+</div>
+
+<div class="glass-card p-6 border-universe-cyan/30 bg-universe-cyan/5 space-y-4">
+<div class="flex justify-between"><h2 class="font-display font-bold text-lg"><i class="fa-solid fa-circle-question text-universe-cyan mr-2"></i>Tech & STEM Quiz</h2><span id="quizScoreText" class="text-universe-cyan text-xs">Score: 0</span></div>
+<p id="quizQuestion" class="text-xs text-gray-400">Question loading...</p>
+<div id="quizOptions" class="space-y-1.5"></div>
+<button onclick="nextQuizQuestion()" class="w-full py-2.5 rounded-xl bg-universe-cyan text-black font-bold text-xs">Next Question</button>
+</div>
+
+</div>
+
+<!-- FUTURE GAMES -->
+<div class="glass-card p-6 reveal">
+<div class="flex items-center justify-between">
+<div><span class="text-amber-400 text-[10px] font-bold uppercase tracking-widest">Next Generation</span><h2 class="font-display font-bold text-2xl mt-1">Future Gaming Arena</h2></div>
+<span class="text-[10px] bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full">UPGRADING</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 mt-5">
+<div class="bg-universe-800 rounded-xl p-4 text-center"><i class="fa-solid fa-fist-raised text-xl text-red-400"></i><p class="text-[10px] mt-2">Fighting Arena</p></div>
+<div class="bg-universe-800 rounded-xl p-4 text-center"><i class="fa-solid fa-car text-xl text-cyan-400"></i><p class="text-[10px] mt-2">Racing</p></div>
+<div class="bg-universe-800 rounded-xl p-4 text-center"><i class="fa-solid fa-chess text-xl text-purple-400"></i><p class="text-[10px] mt-2">Strategy</p></div>
+<div class="bg-universe-800 rounded-xl p-4 text-center"><i class="fa-solid fa-bolt text-xl text-yellow-400"></i><p class="text-[10px] mt-2">Reaction</p></div>
+<div class="bg-universe-800 rounded-xl p-4 text-center"><i class="fa-solid fa-trophy text-xl text-emerald-400"></i><p class="text-[10px] mt-2">Leaderboard</p></div>
+</div>
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-universe-900 border-t border-white/10 py-12 mt-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-2">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center"><i class="fa-solid fa-atom"></i></div>
+<span class="font-display font-bold text-lg">TrustInUniverse</span>
+</div>
+<p class="text-xs text-gray-500 mt-3 max-w-md">An evolving digital ecosystem for creation, education, technology, research, projects and entertainment.</p>
+</div>
+
+<div>
+<h3 class="text-xs font-bold text-white uppercase">Explore</h3>
+<div class="space-y-2 mt-3 text-xs text-gray-400">
+<a href="#page-home" class="block">Home</a>
+<a href="#page-content" class="block">Content Guide</a>
+<a href="#page-education" class="block">STEM Hub</a>
+<a href="#page-projects" class="block">Projects</a>
+</div>
+</div>
+
+<div>
+<h3 class="text-xs font-bold text-white uppercase">Discover</h3>
+<div class="space-y-2 mt-3 text-xs text-gray-400">
+<a href="#page-tools" class="block">Directory</a>
+<a href="#page-games" class="block">Games</a>
+<button onclick="openModal('submitProjectModal')" class="block text-left">Submit Project</button>
+</div>
+</div>
+</div>
+
+<div class="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-[10px] text-gray-500">
+<span>TrustInUniverse © 2026. All rights reserved.</span>
+<span>Explore · Learn · Build · Create · Play</span>
+</div>
+</div>
+</footer>
+
+<!-- SUBMIT MODAL -->
+<div id="submitProjectModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
+<div class="glass-card max-w-lg w-full p-6 space-y-4 bg-universe-800">
+<div class="flex justify-between border-b border-white/10 pb-3">
+<h3 class="font-display font-bold text-lg">Submit Project / Idea</h3>
+<button onclick="closeModal('submitProjectModal')"><i class="fa-solid fa-xmark"></i></button>
+</div>
+
+<form onsubmit="handleProjectSubmit(event)" class="space-y-3">
+<input id="projTitle" required placeholder="Project Title" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<input id="projCategory" required placeholder="Category / Tech Stack" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<input id="projUrl" required type="url" placeholder="https://github.com/username/repo" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white">
+<textarea id="projDesc" required rows="4" placeholder="Brief Description" class="w-full bg-universe-900 border border-white/10 rounded-lg p-2.5 text-xs text-white"></textarea>
+<div class="flex justify-end gap-2">
+<button type="button" onclick="closeModal('submitProjectModal')" class="px-4 py-2 rounded-lg bg-universe-700 text-xs">Cancel</button>
+<button type="submit" class="px-5 py-2 rounded-lg gradient-bg text-xs font-bold">Submit to Platform</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- QUICK START -->
+<div id="quickStartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
+<div class="glass-card max-w-md w-full p-6 space-y-4 bg-universe-800">
+<div class="flex justify-between border-b border-white/10 pb-3">
+<h3 class="font-display font-bold">Welcome to TrustInUniverse</h3>
+<button onclick="closeModal('quickStartModal')"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<p class="text-xs text-gray-400">Choose where you want to begin.</p>
+<div class="space-y-2">
+<a href="#page-content" onclick="closeModal('quickStartModal')" class="block p-4 rounded-xl bg-universe-700 text-xs"><i class="fa-solid fa-video text-universe-accent mr-3"></i>Create & Edit Content</a>
+<a href="#page-education" onclick="closeModal('quickStartModal')" class="block p-4 rounded-xl bg-universe-700 text-xs"><i class="fa-solid fa-graduation-cap text-universe-cyan mr-3"></i>Learn STEM & AI</a>
+<a href="#page-projects" onclick="closeModal('quickStartModal')" class="block p-4 rounded-xl bg-universe-700 text-xs"><i class="fa-solid fa-code text-universe-pink mr-3"></i>Build & View Projects</a>
+<a href="#page-tools" onclick="closeModal('quickStartModal')" class="block p-4 rounded-xl bg-universe-700 text-xs"><i class="fa-solid fa-compass text-universe-emerald mr-3"></i>Discover Tools</a>
+<a href="#page-games" onclick="closeModal('quickStartModal')" class="block p-4 rounded-xl bg-universe-700 text-xs"><i class="fa-solid fa-gamepad text-amber-400 mr-3"></i>Play Games</a>
+</div>
+</div>
+</div>
+
+<!-- GUIDE MODAL -->
+<div id="guideModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
+<div class="glass-card max-w-lg w-full p-6 space-y-4 bg-universe-800">
+<div class="flex justify-between border-b border-white/10 pb-3">
+<h3 id="guideModalTitle" class="font-display font-bold text-lg">Guide Details</h3>
+<button onclick="closeModal('guideModal')"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div id="guideModalBody" class="text-xs text-gray-300 leading-relaxed space-y-3"></div>
+<button onclick="closeModal('guideModal')" class="w-full py-2 rounded-lg gradient-bg text-xs font-bold">Got It</button>
+</div>
+</div>
+
+<script>
+/* NAVIGATION */
+const sections=document.querySelectorAll('section');
+const navBtns=document.querySelectorAll('.nav-btn');
+
+window.addEventListener('scroll',()=>{
+let current='';
+sections.forEach(section=>{
+if(window.scrollY>=section.offsetTop-180) current=section.id;
+});
+
+navBtns.forEach(btn=>{
+btn.classList.remove('active');
+if(btn.getAttribute('href')==='#'+current) btn.classList.add('active');
+});
+
+const total=document.documentElement.scrollHeight-window.innerHeight;
+document.getElementById('progressLine').style.width=(window.scrollY/total*100)+'%';
+});
+
+/* MOBILE */
+function toggleMobileMenu(){
+document.getElementById('mobileMenu').classList.toggle('hidden');
+}
+
+/* MODALS */
+function openModal(id){
+document.getElementById(id).classList.remove('hidden');
+}
+function closeModal(id){
+document.getElementById(id).classList.add('hidden');
+}
+
+document.addEventListener('keydown',e=>{
+if(e.key==='Escape'){
+document.querySelectorAll('[id$="Modal"]').forEach(m=>m.classList.add('hidden'));
+}
+});
+
+/* HOOK GENERATOR */
+function generateHook(){
+const niche=document.getElementById('hookNiche').value;
+const topic=document.getElementById('hookTopic').value||'this topic';
+const output=document.getElementById('hookOutput');
+
+let hooks=[];
+
+if(niche==='tech'){
+hooks=[
+`"Stop learning ${topic} the wrong way — here is the exact roadmap."`,
+`"90% of developers struggle with ${topic} because they miss this."`,
+`"I built a real project using ${topic}, and here is what happened."`,
+`"Before you learn ${topic}, understand this one concept."`,
+`"The fastest way to start mastering ${topic} today."`
+];
+}else if(niche==='education'){
+hooks=[
+`"How to master ${topic} faster using active recall."`,
+`"The secret concept behind ${topic} explained simply."`,
+`"Why students struggle with ${topic} — and how to fix it."`,
+`"Learn ${topic} in minutes with this simple framework."`,
+`"The mistake almost everyone makes while learning ${topic}."`
+];
+}else{
+hooks=[
+`"How to monetize content around ${topic} without millions of followers."`,
+`"The editing trick that can transform content about ${topic}."`,
+`"If you want to grow around ${topic}, start doing this."`,
+`"The content strategy nobody tells beginners about ${topic}."`,
+`"I tested this ${topic} strategy — here is what I learned."`
+];
+}
+
+output.innerHTML=hooks.map((h,i)=>`<p>${i+1}. ${h}</p>`).join('');
+output.classList.remove('hidden');
+}
+
+/* GUIDE */
+function openGuideModal(title){
+document.getElementById('guideModalTitle').innerText=title;
+document.getElementById('guideModalBody').innerHTML=`
+<p><strong class="text-universe-accent">Overview:</strong> ${title} is an important component of a complete digital content workflow.</p>
+<p><strong class="text-universe-cyan">Step 1:</strong> Define the audience and desired outcome before creating.</p>
+<p><strong class="text-universe-pink">Step 2:</strong> Build a strong structure with clear information hierarchy.</p>
+<p><strong class="text-universe-emerald">Step 3:</strong> Improve pacing, visuals and retention triggers.</p>
+<p><strong class="text-amber-400">Step 4:</strong> Test, analyze and iterate based on performance.</p>
+`;
+openModal('guideModal');
+}
+
+/* KINEMATICS */
+function calculateKinematics(){
+const u=parseFloat(document.getElementById('calcU').value)||0;
+const a=parseFloat(document.getElementById('calcA').value)||0;
+const t=parseFloat(document.getElementById('calcT').value)||0;
+
+const v=u+a*t;
+const s=u*t+0.5*a*t*t;
+
+const result=document.getElementById('calcResult');
+result.innerHTML=`
+<p class="text-universe-cyan">Final Velocity: <strong>${v.toFixed(2)} m/s</strong></p>
+<p class="text-universe-pink">Displacement: <strong>${s.toFixed(2)} meters</strong></p>
+<p class="text-gray-400 mt-2">Formula: v = u + at &nbsp; | &nbsp; s = ut + ½at²</p>
+`;
+result.classList.remove('hidden');
+}
+
+/* PROJECT SUBMISSION */
+function handleProjectSubmit(e){
+e.preventDefault();
+
+const title=document.getElementById('projTitle').value;
+const cat=document.getElementById('projCategory').value;
+const url=document.getElementById('projUrl').value;
+const desc=document.getElementById('projDesc').value;
+
+const card=document.createElement('div');
+card.className='glass-card p-4 border-universe-accent/30 bg-universe-accent/5';
+
+card.innerHTML=`
+<h3 class="font-bold text-sm text-white">${title}</h3>
+<span class="text-[10px] text-universe-accent">${cat}</span>
+<p class="text-xs text-gray-400 mt-2">${desc}</p>
+<div class="mt-3 pt-2 border-t border-white/5 flex justify-between text-[10px]">
+<a href="${url}" target="_blank" class="text-universe-cyan">View Source ↗</a>
+<span class="text-universe-emerald">Live</span>
+</div>
+`;
+
+document.getElementById('communityProjectsContainer').prepend(card);
+closeModal('submitProjectModal');
+e.target.reset();
+alert('Project successfully published to the community showcase!');
+}
+
+/* DIRECTORY FILTER */
+function filterDirectory(cat,evt){
+document.querySelectorAll('.dir-filter').forEach(btn=>{
+btn.classList.remove('bg-universe-emerald','text-black');
+btn.classList.add('bg-universe-800','text-gray-300');
+});
+
+if(evt&&evt.target){
+evt.target.classList.add('bg-universe-emerald','text-black');
+evt.target.classList.remove('bg-universe-800','text-gray-300');
+}
+
+document.querySelectorAll('.tool-item').forEach(item=>{
+item.classList.toggle('hidden',cat!=='all'&&item.dataset.cat!==cat);
+});
+}
+
+function searchDirectory(){
+const query=document.getElementById('directorySearch').value.toLowerCase();
+
+document.querySelectorAll('.tool-item').forEach(item=>{
+item.classList.toggle('hidden',!item.innerText.toLowerCase().includes(query));
+});
+}
+
+/* CLICK GAME */
+let clickScore=0;
+let clickActive=false;
+let clickTimeLeft=10;
+let clickInterval=null;
+
+function clickGameTap(){
+const btn=document.getElementById('clickGameBtn');
+
+if(!clickActive&&clickTimeLeft===10){
+clickActive=true;
+clickScore=1;
+btn.innerText='TAP TAP TAP!';
+document.getElementById('clickScore').innerText=clickScore;
+
+clickInterval=setInterval(()=>{
+clickTimeLeft--;
+document.getElementById('clickTimer').innerText=clickTimeLeft+'s';
+
+if(clickTimeLeft<=0){
+clearInterval(clickInterval);
+clickActive=false;
+btn.innerText='PLAY AGAIN';
+alert("Time's up! Final Score: "+clickScore+" clicks!");
+clickTimeLeft=10;
+document.getElementById('clickTimer').innerText='10s';
+}
+},1000);
+
+}else if(clickActive){
+clickScore++;
+document.getElementById('clickScore').innerText=clickScore;
+}else{
+clickTimeLeft=10;
+clickScore=0;
+document.getElementById('clickScore').innerText='0';
+clickGameTap();
+}
+}
+
+/* MEMORY GAME */
+const icons=[
+'fa-atom','fa-code','fa-robot','fa-brain',
+'fa-atom','fa-code','fa-robot','fa-brain'
+];
+
+let flippedCards=[];
+let matchedPairs=0;
+
+function resetMemoryGame(){
+const grid=document.getElementById('memoryGrid');
+grid.innerHTML='';
+flippedCards=[];
+matchedPairs=0;
+document.getElementById('memoryStatus').innerText='Find Pairs';
+
+const shuffled=[...icons].sort(()=>Math.random()-.5);
+
+shuffled.forEach(icon=>{
+const card=document.createElement('div');
+card.className='memory-card h-14';
+card.dataset.icon=icon;
+
+card.innerHTML=`
+<div class="memory-card-inner">
+<div class="memory-card-front text-gray-500 text-xs">
+<i class="fa-solid fa-question"></i>
+</div>
+<div class="memory-card-back text-universe-accent text-base">
+<i class="fa-solid ${icon}"></i>
+</div>
+</div>
+`;
+
+card.onclick=()=>flipMemoryCard(card);
+grid.appendChild(card);
+});
+}
+
+function flipMemoryCard(card){
+if(flippedCards.length<2&&!card.classList.contains('flipped')){
+card.classList.add('flipped');
+flippedCards.push(card);
+
+if(flippedCards.length===2){
+
+if(flippedCards[0].dataset.icon===flippedCards[1].dataset.icon){
+matchedPairs++;
+flippedCards=[];
+document.getElementById('memoryStatus').innerText=matchedPairs+'/4';
+
+if(matchedPairs===4){
+document.getElementById('memoryStatus').innerText='You Won!';
+}
+}else{
+setTimeout(()=>{
+flippedCards.forEach(c=>c.classList.remove('flipped'));
+flippedCards=[];
+},800);
+}
+}
+}
+}
+
+/* QUIZ */
+const quizData=[
+{
+q:"What does LUFS measure in audio editing?",
+options:["Loudness Units Full Scale","Light Frequency Spectrum","Linear Ultrasound Field"],
+correct:0
+},
+{
+q:"Which equation calculates displacement?",
+options:["F = ma","s = ut + ½at²","E = mc²"],
+correct:1
+},
+{
+q:"What is the role of system prompts in LLMs?",
+options:["Render HTML","Define behavior & constraints","Increase GPU clock"],
+correct:1
+},
+{
+q:"Which technology is primarily used for version control?",
+options:["Git","HTML","CSS"],
+correct:0
+},
+{
+q:"What does API commonly stand for?",
+options:["Application Programming Interface","Advanced Program Internet","Automated Processing Input"],
+correct:0
+}
+];
+
+let currentQuizIndex=0;
+let quizScore=0;
+
+function renderQuiz(){
+const q=quizData[currentQuizIndex];
+document.getElementById('quizQuestion').innerText=
+`${currentQuizIndex+1}. ${q.q}`;
+
+const container=document.getElementById('quizOptions');
+container.innerHTML='';
+
+q.options.forEach((option,index)=>{
+const btn=document.createElement('button');
+btn.className='w-full text-left p-2 rounded bg-universe-900 text-xs text-gray-300';
+btn.innerText=option;
+btn.onclick=()=>checkQuizAnswer(index);
+container.appendChild(btn);
+});
+}
+
+function checkQuizAnswer(selected){
+if(selected===quizData[currentQuizIndex].correct){
+quizScore+=10;
+document.getElementById('quizScoreText').innerText='Score: '+quizScore;
+alert('Correct Answer!');
+}else{
+alert('Incorrect!');
+}
+nextQuizQuestion();
+}
+
+function nextQuizQuestion(){
+currentQuizIndex=(currentQuizIndex+1)%quizData.length;
+renderQuiz();
+}
+
+/* SCROLL REVEAL */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting) entry.target.classList.add('visible');
+});
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* INITIALIZE */
+window.addEventListener('DOMContentLoaded',()=>{
+resetMemoryGame();
+renderQuiz();
+});
+</script>
+
 </body>
 </html>
+```
