@@ -1,615 +1,955 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trust In Universe | The Extraordinary Guide & Hub</title>
+    <title>TrustInUniverse | The Extraordinary Creator & Knowledge Ecosystem</title>
+    <meta name="description" content="The ultimate hub for Content Creation, Education & STEM, Real Project Building, AI Tools Directory, Remote Career Hub, and Fun Interactive Games.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        universe: {
+                            900: '#07090e',
+                            800: '#0d111a',
+                            700: '#161b26',
+                            600: '#212938',
+                            accent: '#8b5cf6',
+                            cyan: '#06b6d4',
+                            pink: '#ec4899',
+                            emerald: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        :root {
-            --bg-dark: #0a0c10;
-            --bg-card: #121620;
-            --bg-card-hover: #1a202c;
-            --accent-purple: #8b5cf6;
-            --accent-cyan: #06b6d4;
-            --accent-pink: #ec4899;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --gradient-glow: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #07090e;
+            color: #f3f4f6;
             overflow-x: hidden;
         }
 
-        /* Animated Background Glow */
-        .bg-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, rgba(0,0,0,0) 70%);
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-            pointer-events: none;
-            filter: blur(80px);
-        }
-
-        /* Header / Navbar */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 12, 16, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-glow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--text-main);
-            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 5rem 1rem 3rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero badge {
-            background: rgba(139, 92, 246, 0.15);
-            color: #a78bfa;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-        }
-
-        .hero h1 span {
-            background: var(--gradient-glow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        /* Section Layout */
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section-header {
-            margin-bottom: 2.5rem;
-            text-align: left;
-        }
-
-        .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-        }
-
-        /* Cards Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.8rem;
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(22, 27, 38, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .glass-card:hover {
             border-color: rgba(139, 92, 246, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(139, 92, 246, 0.25);
         }
 
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: var(--accent-cyan);
-            margin-bottom: 1.2rem;
+        /* Gradient Glowing Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #06b6d4 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.6rem;
+        .gradient-bg {
+            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
         }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
+        /* Subtle Ambient Glow */
+        .ambient-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+            filter: blur(70px);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            background: var(--gradient-glow);
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        .btn:hover {
-            opacity: 0.9;
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        ::-webkit-scrollbar-track {
+            background: #07090e;
         }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
+        ::-webkit-scrollbar-thumb {
+            background: #212938;
+            border-radius: 4px;
         }
-
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: var(--accent-purple);
-        }
-
-        /* Tool Directory Tabs */
-        .tab-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-
-        .tab-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 8px 16px;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            color: var(--text-main);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .tool-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.02);
-            margin-bottom: 8px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: 0.2s;
-        }
-
-        .tool-link:hover {
-            background: rgba(139, 92, 246, 0.1);
-            transform: translateX(4px);
-        }
-
-        /* Project Form & List */
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            color: white;
-            outline: none;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--accent-purple);
-        }
-
-        /* Mini Games Section */
-        .game-box {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .game-score {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent-cyan);
-            margin: 1rem 0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.3rem; }
-            nav ul { display: none; } /* Mobile navbar toggle simplified */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
         }
     </style>
 </head>
-<body>
+<body class="relative min-h-screen flex flex-col justify-between">
 
-    <div class="bg-glow"></div>
+    <div class="ambient-glow top-0 left-1/2 -translate-x-1/2"></div>
+    <div class="ambient-glow top-1/2 right-0"></div>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-rocket"></i> TrustInUniverse</a>
-            <nav>
-                <ul>
-                    <li><a href="#content-creation"><i class="fa-solid fa-video"></i> Content Creation</a></li>
-                    <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-                    <li><a href="#projects"><i class="fa-solid fa-code"></i> Projects</a></li>
-                    <li><a href="#tools"><i class="fa-solid fa-toolbox"></i> Web Directory</a></li>
-                    <li><a href="#games"><i class="fa-solid fa-gamepad"></i> Fun & Games</a></li>
-                </ul>
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-50 bg-universe-900/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="javascript:void(0)" onclick="switchPage('home')" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-universe-accent/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-universe-accent transition-colors">TrustInUniverse</span>
+                    <span class="block text-xs text-gray-400 font-medium">Extraordinary Hub</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Tabs -->
+            <nav class="hidden lg:flex items-center gap-1 bg-universe-800/80 p-1.5 rounded-full border border-white/5">
+                <button onclick="switchPage('home')" id="nav-home" class="nav-btn active px-4 py-2 rounded-full text-sm font-semibold text-white bg-universe-accent shadow-md transition-all">
+                    <i class="fa-solid fa-house mr-1.5"></i> Home
+                </button>
+                <button onclick="switchPage('content')" id="nav-content" class="nav-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="fa-solid fa-clapperboard mr-1.5 text-universe-accent"></i> Content Guide
+                </button>
+                <button onclick="switchPage('education')" id="nav-education" class="nav-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-1.5 text-universe-cyan"></i> Education Hub
+                </button>
+                <button onclick="switchPage('projects')" id="nav-projects" class="nav-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="fa-solid fa-cubes mr-1.5 text-universe-pink"></i> Project Portal
+                </button>
+                <button onclick="switchPage('tools')" id="nav-tools" class="nav-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="fa-solid fa-compass mr-1.5 text-universe-emerald"></i> Web Directory
+                </button>
+                <button onclick="switchPage('games')" id="nav-games" class="nav-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="fa-solid fa-gamepad mr-1.5 text-amber-400"></i> Fun & Games
+                </button>
             </nav>
+
+            <!-- CTA Action Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="openModal('quickStartModal')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-sm font-bold shadow-lg shadow-universe-accent/25 hover:opacity-95 transition-all">
+                    <i class="fa-solid fa-rocket mr-2"></i> Get Started
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-300 hover:text-white">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden border-b border-white/10 bg-universe-800 px-4 py-4 space-y-2">
+            <button onclick="switchPage('home'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-white/5">Home</button>
+            <button onclick="switchPage('content'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-white/5">Content Creation Guide</button>
+            <button onclick="switchPage('education'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-white/5">Education & STEM Hub</button>
+            <button onclick="switchPage('projects'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-white/5">Projects Portal</button>
+            <button onclick="switchPage('tools'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-white/5">Web Directory (AI, Jobs, Research)</button>
+            <button onclick="switchPage('games'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-white/5">Fun & Games Zone</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <badge><i class="fa-solid fa-sparkles"></i> The Extraordinary Knowledge Hub</badge>
-        <h1>Master Content, Tech & <span>Real-World Skills</span></h1>
-        <p>A unified platform for full guides on creation, education, project collaboration, AI tools, remote careers, and interactive games.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-            <a href="#projects" class="btn"><i class="fa-solid fa-plus"></i> Submit a Project</a>
-            <a href="#tools" class="btn btn-outline"><i class="fa-solid fa-magnifying-glass"></i> Explore Tools</a>
-        </div>
-    </div>
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 z-10">
 
-    <!-- Section 1: Content Creation Guide -->
-    <section id="content-creation">
-        <div class="section-header">
-            <h2><i class="fa-solid fa-clapperboard" style="color: var(--accent-purple);"></i> Content Creation Roadmap</h2>
-            <p>Step-by-step guidance to script, produce, and scale your videos and articles.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                <h3>1. Scriptwriting & Hooks</h3>
-                <p>Learn how to capture audience attention in the first 3 seconds with proven retention frameworks.</p>
-                <a href="#" class="btn btn-outline" onclick="alert('Guide: Keep hooks under 10 words. Present a clear problem or high-stakes statement immediately!')">Read Guide</a>
+        <!-- ================= PAGE 1: HOME PAGE ================= -->
+        <section id="page-home" class="page-view space-y-16">
+            <!-- Hero Banner -->
+            <div class="text-center max-w-4xl mx-auto pt-8 space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-universe-accent/10 border border-universe-accent/30 text-universe-accent text-xs font-bold tracking-wide uppercase">
+                    <i class="fa-solid fa-sparkles"></i> The All-In-One Extraordinary Platform
+                </div>
+                <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Explore, Learn, Build & Master <br><span class="gradient-text">The Modern Digital World</span>
+                </h1>
+                <p class="text-lg text-gray-400 font-normal leading-relaxed max-w-2xl mx-auto">
+                    A multi-dimensional platform bridging elite Content Creation guides, Academic STEM roadmaps, real-world Google & Open-Source Projects, curated AI tools, and interactive gaming.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <button onclick="switchPage('projects')" class="px-7 py-3.5 rounded-xl gradient-bg text-white font-bold text-sm shadow-xl shadow-universe-accent/30 hover:scale-105 transition-all">
+                        <i class="fa-solid fa-code-branch mr-2"></i> Explore Projects Portal
+                    </button>
+                    <button onclick="switchPage('tools')" class="px-7 py-3.5 rounded-xl bg-universe-700 hover:bg-universe-600 border border-white/10 text-white font-bold text-sm transition-all">
+                        <i class="fa-solid fa-layer-group mr-2"></i> Access 50+ Curated Tools
+                    </button>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
-                <h3>2. Video Editing & Visuals</h3>
-                <p>Recommended workflows for CapCut, Premiere Pro, and DaVinci Resolve for fast turnarounds.</p>
-                <a href="#" class="btn btn-outline" onclick="alert('Workflow: 1. Rough Cut -> 2. Audio Clean -> 3. Dynamic Subtitles -> 4. Sound Effects')">Read Guide</a>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h3>3. SEO & Distribution</h3>
-                <p>Optimize thumbnails, metadata, and cross-platform publishing strategy for organic reach.</p>
-                <a href="#" class="btn btn-outline" onclick="alert('SEO Tip: Use high-contrast 3-word thumbnails and title keywords matching search intent.')">Read Guide</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section 2: Education & Academic Guides -->
-    <section id="education">
-        <div class="section-header">
-            <h2><i class="fa-solid fa-book-open" style="color: var(--accent-cyan);"></i> Learning & Education Guides</h2>
-            <p>Master complex topics with clear paths for STEM, programming, and self-learning.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-atom"></i></div>
-                <h3>STEM & Engineering Prep</h3>
-                <p>Core concepts in Physics, Kinematics, Calculus, and admission problem solving.</p>
-                <a href="#" class="btn btn-outline">Explore Lessons</a>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Web Engineering</h3>
-                <p>From HTML/CSS/JS fundamentals to building dynamic Web Applications and APIs.</p>
-                <a href="#" class="btn btn-outline">View Roadmap</a>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-                <h3>Prompt Engineering</h3>
-                <p>How to instruct AI models (Gemini, ChatGPT) for accurate research and coding help.</p>
-                <a href="#" class="btn btn-outline">Learn Prompts</a>
-            </div>
-        </div>
-    </section>
+            <!-- Portal Feature Blocks -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                <!-- Card 1 -->
+                <div onclick="switchPage('content')" class="glass-card p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-universe-accent/10 border border-universe-accent/20 flex items-center justify-center text-universe-accent text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-2 flex items-center justify-between">
+                        Content Creation Guide <i class="fa-solid fa-arrow-right text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-universe-accent"></i>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Scriptwriting frameworks, viral short-form hooks, editing masterclasses (Premiere/CapCut), thumbnail psychology & growth strategies.</p>
+                </div>
 
-    <!-- Section 3: Project Playground & Submissions -->
-    <section id="projects">
-        <div class="section-header">
-            <h2><i class="fa-solid fa-diagram-project" style="color: var(--accent-pink);"></i> Real Project Hub</h2>
-            <p>Explore real-world project ideas, learn how they work, or upload your own concept!</p>
-        </div>
-        <div class="grid">
-            <!-- Submit Form -->
-            <div class="card">
-                <h3><i class="fa-solid fa-paper-plane"></i> Share Your Project</h3>
-                <form id="projectForm" style="margin-top: 1rem;">
-                    <div class="form-group">
-                        <input type="text" id="pTitle" placeholder="Project Title" required>
+                <!-- Card 2 -->
+                <div onclick="switchPage('education')" class="glass-card p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-universe-cyan/10 border border-universe-cyan/20 flex items-center justify-center text-universe-cyan text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <div class="form-group">
-                        <textarea id="pDesc" rows="3" placeholder="Brief description of how it works..." required></textarea>
+                    <h3 class="font-display font-bold text-xl text-white mb-2 flex items-center justify-between">
+                        Education & STEM Hub <i class="fa-solid fa-arrow-right text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-universe-cyan"></i>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Physics Kinematics guides, University Admission Prep, complete Web Development roadmaps & Prompt Engineering masterclasses.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="switchPage('projects')" class="glass-card p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-universe-pink/10 border border-universe-pink/20 flex items-center justify-center text-universe-pink text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="url" id="pLink" placeholder="Link (GitHub / Demo URL)">
+                    <h3 class="font-display font-bold text-xl text-white mb-2 flex items-center justify-between">
+                        Project Idea & Upload Lab <i class="fa-solid fa-arrow-right text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-universe-pink"></i>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Learn step-by-step projects, build real applications, explore Google & open-source projects, or upload your own innovation.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div onclick="switchPage('tools')" class="glass-card p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-universe-emerald/10 border border-universe-emerald/20 flex items-center justify-center text-universe-emerald text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microchip"></i>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%;">Upload Project</button>
-                </form>
+                    <h3 class="font-display font-bold text-xl text-white mb-2 flex items-center justify-between">
+                        AI & Web Directory <i class="fa-solid fa-arrow-right text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-universe-emerald"></i>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Curated catalog of top AI platforms, global remote job boards, research journals, and developer utility sites with direct links.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div onclick="switchPage('games')" class="glass-card p-6 cursor-pointer group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-2 flex items-center justify-between">
+                        Fun & Games Arena <i class="fa-solid fa-arrow-right text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-amber-400"></i>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Play built-in interactive mini-games including Speed Typing Tests, AI Trivia, Memory Card Matching, and Speed Clicker.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div onclick="openModal('quickStartModal')" class="glass-card p-6 cursor-pointer group border-universe-accent/30 bg-universe-accent/5">
+                    <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-2">
+                        Community & Submit
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Have a project or resource to add to TrustInUniverse? Connect with our creator ecosystem and get featured globally.</p>
+                </div>
             </div>
-            <!-- Dynamic Community Projects Feed -->
-            <div class="card" style="grid-column: span 2;">
-                <h3><i class="fa-solid fa-cubes"></i> Community Showcase</h3>
-                <div id="projectList" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
-                        <h4 style="color: var(--accent-cyan);">1. AI Resume Builder Web App</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">A lightweight tool that generates ATS-friendly resumes using AI suggestions.</p>
+        </section>
+
+        <!-- ================= PAGE 2: CONTENT CREATION GUIDE ================= -->
+        <section id="page-content" class="page-view hidden space-y-10">
+            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-universe-accent font-bold text-xs uppercase tracking-wider">Masterclass & Frameworks</span>
+                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Content Creation & Audience Growth Guide</h1>
+                    <p class="text-gray-400 text-sm mt-1">Full end-to-end guidance from video scripting to algorithm monetization.</p>
+                </div>
+                <button onclick="openGuideModal('Scriptwriting Framework')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-sm font-bold shadow-lg">
+                    <i class="fa-solid fa-file-lines mr-2"></i> Download Script Template
+                </button>
+            </div>
+
+            <!-- Content Modules Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Module 1 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-universe-accent/20 text-universe-accent flex items-center justify-center font-bold">1</span>
+                        <h2 class="font-display font-bold text-xl text-white">YouTube Scriptwriting & Hook Psychology</h2>
                     </div>
-                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
-                        <h4 style="color: var(--accent-cyan);">2. Physics Kinematics Simulator</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Interactive canvas tool to simulate velocity, acceleration, and trajectory motion.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">The first 5 seconds determine 80% of video retention. Learn how to structure high-performing hooks using the Hook-Story-Offer formula.</p>
+                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
+                        <div class="font-semibold text-universe-accent"><i class="fa-solid fa-check mr-1.5"></i> The 3-Second Rule:</div>
+                        <p>State a high-stakes outcome or challenge instantly. Avoid long intro logos or generic welcomes.</p>
+                    </div>
+                    <button onclick="openGuideModal('YouTube Scriptwriting & Hook Psychology')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
+                        Read Full Scripting Guide
+                    </button>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-universe-cyan/20 text-universe-cyan flex items-center justify-center font-bold">2</span>
+                        <h2 class="font-display font-bold text-xl text-white">Video Editing Workflow (Premiere, CapCut, DaVinci)</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Standardize your post-production workflow to cut editing time in half while maintaining cinema-quality pacing.</p>
+                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
+                        <div class="font-semibold text-universe-cyan"><i class="fa-solid fa-check mr-1.5"></i> Editing Timeline Order:</div>
+                        <p>A-Roll Rough Cut $\rightarrow$ Audio Normalization (-14 LUFS) $\rightarrow$ Sound Effects (SFX) $\rightarrow$ B-Roll & Text Animations.</p>
+                    </div>
+                    <button onclick="openGuideModal('Video Editing Workflow')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
+                        Explore Editing Presets & Workflow
+                    </button>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-universe-pink/20 text-universe-pink flex items-center justify-center font-bold">3</span>
+                        <h2 class="font-display font-bold text-xl text-white">Thumbnail Design & Click-Through Rate (CTR)</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Thumbnails account for 90% of a viewer's decision to click. Learn visual hierarchy, facial expression contrast, and color balance.</p>
+                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
+                        <div class="font-semibold text-universe-pink"><i class="fa-solid fa-check mr-1.5"></i> High-CTR Rule:</div>
+                        <p>Limit thumbnail text to 3 words or fewer. Complement the title without repeating the title verbatim.</p>
+                    </div>
+                    <button onclick="openGuideModal('Thumbnail Design & CTR Optimization')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
+                        Study Thumbnail Case Studies
+                    </button>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-universe-emerald/20 text-universe-emerald flex items-center justify-center font-bold">4</span>
+                        <h2 class="font-display font-bold text-xl text-white">Short-Form Virality (Shorts, Reels, TikTok)</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Algorithmic guidelines to consistently reach 100k+ views across vertical video networks.</p>
+                    <div class="bg-universe-900/80 p-4 rounded-lg border border-white/5 space-y-2 text-xs text-gray-300">
+                        <div class="font-semibold text-universe-emerald"><i class="fa-solid fa-check mr-1.5"></i> Vertical Video Blueprint:</div>
+                        <p>Maintain dynamic text captions on screen at all times. Change visuals or camera angles every 2.5 seconds.</p>
+                    </div>
+                    <button onclick="openGuideModal('Short-Form Virality Framework')" class="w-full py-2.5 rounded-lg bg-universe-700 hover:bg-universe-600 text-white text-xs font-bold transition-colors">
+                        View Short-Form Blueprint
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: EDUCATION & STEM HUB ================= -->
+        <section id="page-education" class="page-view hidden space-y-10">
+            <div class="border-b border-white/10 pb-6">
+                <span class="text-universe-cyan font-bold text-xs uppercase tracking-wider">Academic Excellence & Tech Skills</span>
+                <h1 class="font-display text-3xl font-extrabold text-white mt-1">Education & STEM Learning Hub</h1>
+                <p class="text-gray-400 text-sm mt-1">Comprehensive guides for academic success, university prep, programming roadmaps, and AI mastery.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- STEM Topic 1 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-universe-cyan/10 text-universe-cyan flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h2 class="font-display font-bold text-lg text-white">Physics Kinematics & Mechanics</h2>
+                    <p class="text-gray-400 text-xs leading-relaxed">Master 1D/2D motion equations, trajectory calculation, projectile vectors, and Newton's laws of motion with formula breakdowns.</p>
+                    <ul class="text-xs text-gray-300 space-y-1 list-disc list-inside">
+                        <li>Equations of Constant Acceleration</li>
+                        <li>Relative Velocity & Vector Resolution</li>
+                        <li>Work, Energy & Momentum Conservation</li>
+                    </ul>
+                    <button onclick="openGuideModal('Physics Kinematics & Mechanics')" class="w-full py-2 rounded-lg bg-universe-cyan/20 border border-universe-cyan/30 text-universe-cyan text-xs font-bold hover:bg-universe-cyan/30 transition-colors">
+                        Study Kinematics Guide
+                    </button>
+                </div>
+
+                <!-- STEM Topic 2 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-universe-accent/10 text-universe-accent flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h2 class="font-display font-bold text-lg text-white">Full-Stack Web Development</h2>
+                    <p class="text-gray-400 text-xs leading-relaxed">From foundational HTML5/CSS3 and JavaScript DOM manipulation to Tailwind, React, Node.js, and server deployment.</p>
+                    <ul class="text-xs text-gray-300 space-y-1 list-disc list-inside">
+                        <li>Frontend: HTML5, CSS Grid, React.js</li>
+                        <li>Backend: Node.js, Express, REST APIs</li>
+                        <li>Database: Supabase, MongoDB, PostgreSQL</li>
+                    </ul>
+                    <button onclick="openGuideModal('Full-Stack Web Development Roadmap')" class="w-full py-2 rounded-lg bg-universe-accent/20 border border-universe-accent/30 text-universe-accent text-xs font-bold hover:bg-universe-accent/30 transition-colors">
+                        View Web Dev Roadmap
+                    </button>
+                </div>
+
+                <!-- STEM Topic 3 -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-universe-pink/10 text-universe-pink flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h2 class="font-display font-bold text-lg text-white">Prompt Engineering & AI Workflows</h2>
+                    <p class="text-gray-400 text-xs leading-relaxed">Learn structured prompting methodologies (System Prompts, Few-Shot Prompting, Chain-of-Thought) to automate studying and coding.</p>
+                    <ul class="text-xs text-gray-300 space-y-1 list-disc list-inside">
+                        <li>Role-Task-Context Prompt Architecture</li>
+                        <li>Automated Essay & Code Review Prompts</li>
+                        <li>Gemini & OpenAI API Integration</li>
+                    </ul>
+                    <button onclick="openGuideModal('Prompt Engineering Masterclass')" class="w-full py-2 rounded-lg bg-universe-pink/20 border border-universe-pink/30 text-universe-pink text-xs font-bold hover:bg-universe-pink/30 transition-colors">
+                        Open Prompting Library
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: PROJECTS PORTAL ================= -->
+        <section id="page-projects" class="page-view hidden space-y-10">
+            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-universe-pink font-bold text-xs uppercase tracking-wider">Project Lab & Showcase</span>
+                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Real-World Projects Portal</h1>
+                    <p class="text-gray-400 text-sm mt-1">Learn step-by-step projects, explore Google & open-source tools, or upload your own project idea.</p>
+                </div>
+                <button onclick="openModal('submitProjectModal')" class="px-5 py-2.5 rounded-xl gradient-bg text-white text-sm font-bold shadow-lg">
+                    <i class="fa-solid fa-plus mr-2"></i> Submit Your Own Project
+                </button>
+            </div>
+
+            <!-- Category Sub-Tabs -->
+            <div class="flex flex-wrap gap-2 border-b border-white/10 pb-4">
+                <button onclick="filterProjects('all')" class="proj-tab active px-4 py-2 rounded-lg bg-universe-accent text-white text-xs font-bold">All Projects</button>
+                <button onclick="filterProjects('learn')" class="proj-tab px-4 py-2 rounded-lg bg-universe-800 text-gray-300 hover:text-white text-xs font-bold">Learn & Step-by-Step</button>
+                <button onclick="filterProjects('google')" class="proj-tab px-4 py-2 rounded-lg bg-universe-800 text-gray-300 hover:text-white text-xs font-bold">Google & Open-Source Repos</button>
+                <button onclick="filterProjects('community')" class="proj-tab px-4 py-2 rounded-lg bg-universe-800 text-gray-300 hover:text-white text-xs font-bold">Community Submissions</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Item 1 -->
+                <div class="glass-card p-6 space-y-4 project-card" data-category="google">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-universe-cyan/20 text-universe-cyan text-xs font-bold">Google / Open Source</span>
+                        <i class="fa-brands fa-github text-xl text-gray-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white">TensorFlow Web AI Demos</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Official Google open-source repository featuring browser-based machine learning models and computer vision pipelines.</p>
+                    <a href="https://github.com/tensorflow/tfjs-models" target="_blank" class="inline-flex items-center text-xs font-bold text-universe-cyan hover:underline">
+                        Explore Google Repo <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="glass-card p-6 space-y-4 project-card" data-category="learn">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-universe-accent/20 text-universe-accent text-xs font-bold">Step-by-Step Guide</span>
+                        <i class="fa-solid fa-rocket text-xl text-universe-accent"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white">Build an AI Portfolio Website</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Complete step-by-step tutorial to create and deploy a dark-mode portfolio site hosted free on GitHub Pages.</p>
+                    <button onclick="openGuideModal('Build an AI Portfolio Website Step-by-Step')" class="inline-flex items-center text-xs font-bold text-universe-accent hover:underline">
+                        Learn Project Tutorial <i class="fa-solid fa-book-open ml-1.5"></i>
+                    </button>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="glass-card p-6 space-y-4 project-card" data-category="google">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-universe-cyan/20 text-universe-cyan text-xs font-bold">Google Search / Web API</span>
+                        <i class="fa-brands fa-google text-xl text-gray-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white">Google Search Console API Dashboard</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">An open-source Python tool to query Google Search engine indexing stats and keyword positioning automatically.</p>
+                    <a href="https://developers.google.com/webmaster-tools" target="_blank" class="inline-flex items-center text-xs font-bold text-universe-cyan hover:underline">
+                        View API Documentation <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Project Item 4 -->
+                <div class="glass-card p-6 space-y-4 project-card" data-category="community">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 rounded bg-universe-pink/20 text-universe-pink text-xs font-bold">Community Project</span>
+                        <i class="fa-solid fa-user-gear text-xl text-universe-pink"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white">TrustInUniverse Web Hub</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">The flagship multi-purpose web platform designed for creators, learners, job seekers, and developers.</p>
+                    <a href="https://trustinuniverse.wordpress.com" target="_blank" class="inline-flex items-center text-xs font-bold text-universe-pink hover:underline">
+                        Visit Live Platform <i class="fa-solid fa-globe ml-1.5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: WEB DIRECTORY (AI, JOBS, RESEARCH) ================= -->
+        <section id="page-tools" class="page-view hidden space-y-10">
+            <div class="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-universe-emerald font-bold text-xs uppercase tracking-wider">Curated Web Catalog</span>
+                    <h1 class="font-display text-3xl font-extrabold text-white mt-1">Essential Web Tools Directory</h1>
+                    <p class="text-gray-400 text-sm mt-1">Verified direct links and descriptions for the world's best AI, Remote Jobs, and Research platforms.</p>
+                </div>
+                <!-- Search Filter -->
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-500 text-xs"></i>
+                    <input type="text" id="toolSearchInput" onkeyup="searchTools()" placeholder="Search tools or platforms..." class="w-full bg-universe-800 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-universe-accent">
+                </div>
+            </div>
+
+            <!-- Directory Categories Navigation -->
+            <div class="flex gap-2 border-b border-white/10 pb-4 overflow-x-auto">
+                <button onclick="switchDirectoryTab('ai')" id="dir-tab-ai" class="dir-btn active px-4 py-2 rounded-lg bg-universe-emerald text-white text-xs font-bold transition-all">
+                    <i class="fa-solid fa-robot mr-1.5"></i> AI Tools & Models
+                </button>
+                <button onclick="switchDirectoryTab('jobs')" id="dir-tab-jobs" class="dir-btn px-4 py-2 rounded-lg bg-universe-800 text-gray-300 hover:text-white text-xs font-bold transition-all">
+                    <i class="fa-solid fa-briefcase mr-1.5"></i> Remote Jobs
+                </button>
+                <button onclick="switchDirectoryTab('research')" id="dir-tab-research" class="dir-btn px-4 py-2 rounded-lg bg-universe-800 text-gray-300 hover:text-white text-xs font-bold transition-all">
+                    <i class="fa-solid fa-book-bookmark mr-1.5"></i> Research & Academia
+                </button>
+            </div>
+
+            <!-- Directory Cards Feed -->
+            <div id="directoryFeed" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Directory items will be populated via JavaScript -->
+            </div>
+        </section>
+
+        <!-- ================= PAGE 6: FUN & GAMES ZONE ================= -->
+        <section id="page-games" class="page-view hidden space-y-10">
+            <div class="border-b border-white/10 pb-6">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">Interactive Playground</span>
+                <h1 class="font-display text-3xl font-extrabold text-white mt-1">Fun & Games Arena</h1>
+                <p class="text-gray-400 text-sm mt-1">Enjoy high-speed mini-games right inside your browser!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Game 1: Speed Typing Test -->
+                <div class="glass-card p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-amber-400 font-bold font-display text-lg">
+                            <i class="fa-solid fa-keyboard"></i> Speed Typing Challenge
+                        </div>
+                        <span id="typingWpm" class="text-xs px-2.5 py-1 rounded bg-amber-400/10 text-amber-400 font-bold">0 WPM</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Type the target text below as quickly as possible:</p>
+                    <div class="p-3 bg-universe-900 rounded-lg text-xs font-mono text-universe-cyan border border-white/5 select-none" id="targetText">
+                        TrustInUniverse empowers creators, developers, and learners around the world.
+                    </div>
+                    <textarea id="typingInput" oninput="checkTypingSpeed()" rows="2" placeholder="Start typing here..." class="w-full bg-universe-800 border border-white/10 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-400"></textarea>
+                    <button onclick="resetTypingGame()" class="w-full py-2 rounded-lg bg-universe-700 text-xs font-bold text-white hover:bg-universe-600">
+                        Reset Game
+                    </button>
+                </div>
+
+                <!-- Game 2: Speed Clicker -->
+                <div class="glass-card p-6 space-y-4 text-center">
+                    <div class="flex items-center justify-center gap-2 text-universe-pink font-bold font-display text-lg">
+                        <i class="fa-solid fa-bolt"></i> 5-Second Clicker Test
+                    </div>
+                    <p class="text-xs text-gray-400">How many clicks can you land in 5 seconds?</p>
+                    <div id="clickerCount" class="text-5xl font-extrabold text-white font-display py-2">0</div>
+                    <button id="clickerBtn" onclick="handleClickerGame()" class="w-full py-3 rounded-xl gradient-bg text-white font-bold text-sm shadow-lg">
+                        Click Here to Start!
+                    </button>
+                </div>
+
+                <!-- Game 3: Tech Trivia Quiz -->
+                <div class="glass-card p-6 space-y-4 md:col-span-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-universe-cyan font-bold font-display text-lg">
+                            <i class="fa-solid fa-lightbulb"></i> Extraordinary AI & Tech Trivia
+                        </div>
+                        <span id="triviaScore" class="text-xs px-2.5 py-1 rounded bg-universe-cyan/10 text-universe-cyan font-bold">Score: 0</span>
+                    </div>
+                    <div id="triviaBox" class="p-4 bg-universe-900 rounded-lg border border-white/5 space-y-4">
+                        <h4 id="triviaQuestion" class="font-semibold text-sm text-white">Loading question...</h4>
+                        <div id="triviaOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- Options rendered dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 4: Web Directory (AI, Remote Jobs, Research) -->
-    <section id="tools">
-        <div class="section-header">
-            <h2><i class="fa-solid fa-globe" style="color: var(--accent-purple);"></i> Essential Web Directory</h2>
-            <p>Curated platforms categorized for research, productivity, AI, and career growth.</p>
-        </div>
+    </main>
 
-        <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab('ai')">AI Tools</button>
-            <button class="tab-btn" onclick="switchTab('jobs')">Remote Jobs</button>
-            <button class="tab-btn" onclick="switchTab('research')">Research & Academia</button>
-        </div>
-
-        <div id="tab-content" class="grid">
-            <!-- Content populates dynamically via JavaScript -->
-        </div>
-    </section>
-
-    <!-- Section 5: Fun & Games Zone -->
-    <section id="games">
-        <div class="section-header">
-            <h2><i class="fa-solid fa-gamepad" style="color: var(--accent-cyan);"></i> Fun & Mini Games</h2>
-            <p>Take a quick brain break with these interactive mini-games.</p>
-        </div>
-
-        <div class="grid">
-            <div class="game-box">
-                <i class="fa-solid fa-bolt" style="font-size: 2rem; color: var(--accent-cyan);"></i>
-                <h3 style="margin-top: 0.5rem;">Speed Clicker Challenge</h3>
-                <p style="color: var(--text-muted);">Click as fast as you can in 5 seconds!</p>
-                <div class="game-score" id="clickScore">0</div>
-                <button class="btn" id="clickerBtn" onclick="handleClicker()">Start Game</button>
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-universe-900/90 py-8 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-lg gradient-bg flex items-center justify-center text-white text-xs font-bold">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <span class="font-display font-bold text-sm text-white">TrustInUniverse &copy; 2026</span>
             </div>
-
-            <div class="game-box">
-                <i class="fa-solid fa-lightbulb" style="font-size: 2rem; color: var(--accent-pink);"></i>
-                <h3 style="margin-top: 0.5rem;">Quick Tech Trivia</h3>
-                <p id="triviaQ" style="color: var(--text-muted);">What does HTML stand for?</p>
-                <button class="btn btn-outline" style="margin-top: 1rem;" onclick="checkTrivia()">Show Answer</button>
+            <p class="text-xs text-gray-500 text-center sm:text-left">
+                Empowering content creation, education, project development, and career growth worldwide.
+            </p>
+            <div class="flex gap-4 text-xs text-gray-400">
+                <a href="https://trustinuniverse.wordpress.com" target="_blank" class="hover:text-white"><i class="fa-solid fa-globe mr-1"></i> WordPress Site</a>
+                <a href="javascript:void(0)" onclick="switchPage('home')" class="hover:text-white">Home</a>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 TrustInUniverse. Built with passion for extraordinary creators and learners.</p>
     </footer>
 
-    <!-- Interactive JavaScript -->
+    <!-- MODAL: SUBMIT PROJECT -->
+    <div id="submitProjectModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full p-6 space-y-4 relative border-universe-accent/40">
+            <button onclick="closeModal('submitProjectModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 class="font-display font-bold text-xl text-white"><i class="fa-solid fa-upload text-universe-accent mr-2"></i> Submit Your Project Idea</h3>
+            <p class="text-xs text-gray-400">Share your application or idea to get featured in the TrustInUniverse community portal.</p>
+            <form onsubmit="handleProjectSubmit(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Project Name</label>
+                    <input type="text" id="modalProjName" required placeholder="e.g. AI Prompt Generator" class="w-full bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Description</label>
+                    <textarea id="modalProjDesc" required rows="3" placeholder="Explain how the project works..." class="w-full bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Project / GitHub Link</label>
+                    <input type="url" id="modalProjLink" placeholder="https://github.com/username/project" class="w-full bg-universe-800 border border-white/10 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-universe-accent">
+                </div>
+                <button type="submit" class="w-full py-2.5 rounded-lg gradient-bg text-white font-bold text-xs shadow-lg">
+                    Upload & Publish Project
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: DETAILED GUIDE DISPLAY -->
+    <div id="guideModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full p-6 space-y-4 relative max-h-[85vh] overflow-y-auto">
+            <button onclick="closeModal('guideModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 id="guideModalTitle" class="font-display font-bold text-2xl text-white">Guide View</h3>
+            <div id="guideModalBody" class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <!-- Content inserted via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: QUICK START -->
+    <div id="quickStartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 relative text-center">
+            <button onclick="closeModal('quickStartModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-12 h-12 rounded-xl gradient-bg mx-auto flex items-center justify-center text-white text-2xl">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white">Welcome to TrustInUniverse!</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+                Choose a roadmap to get started today: study content creation, practice STEM concepts, build open-source projects, or search curated AI tools!
+            </p>
+            <div class="space-y-2 pt-2">
+                <button onclick="switchPage('content'); closeModal('quickStartModal')" class="w-full py-2 rounded-lg bg-universe-accent/20 border border-universe-accent/30 text-universe-accent text-xs font-bold hover:bg-universe-accent/30">
+                    Content Creation Roadmap
+                </button>
+                <button onclick="switchPage('education'); closeModal('quickStartModal')" class="w-full py-2 rounded-lg bg-universe-cyan/20 border border-universe-cyan/30 text-universe-cyan text-xs font-bold hover:bg-universe-cyan/30">
+                    Education & STEM Hub
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Web Directory Data
-        const toolsData = {
+        // ================= PAGE ROUTING SWITCHER =================
+        function switchPage(pageId) {
+            // Hide all page views
+            document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+            
+            // Show requested page view
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Update active state on desktop navbar
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-universe-accent', 'text-white');
+                btn.classList.add('text-gray-300');
+            });
+            const activeNavBtn = document.getElementById(`nav-${pageId}`);
+            if (activeNavBtn) {
+                activeNavBtn.classList.add('bg-universe-accent', 'text-white');
+                activeNavBtn.classList.remove('text-gray-300');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // ================= DIRECTORY DATA & LOGIC =================
+        const webDirectory = {
             ai: [
-                { name: "Google Gemini", desc: "Top-tier multimodal AI for analysis, coding & reasoning.", url: "https://gemini.google.com" },
-                { name: "ChatGPT", desc: "Versatile assistant for text generation & creative writing.", url: "https://chatgpt.com" },
-                { name: "Midjourney", desc: "Industry leader in ultra-realistic AI art generation.", url: "https://midjourney.com" }
+                { name: "Google Gemini", desc: "Google's powerful multimodal AI model for code generation, scientific reasoning, and research.", tag: "Multimodal AI", link: "https://gemini.google.com" },
+                { name: "ChatGPT", desc: "OpenAI's conversational model for complex problem solving, copywriting, and logic.", tag: "Conversational AI", link: "https://chatgpt.com" },
+                { name: "Claude AI", desc: "Anthropic's high-precision AI specialized in long-document synthesis and coding accuracy.", tag: "Logic & Code", link: "https://claude.ai" },
+                { name: "Midjourney", desc: "Industry-standard text-to-image generator for photorealistic graphic design and art.", tag: "Image Generation", link: "https://midjourney.com" },
+                { name: "Perplexity AI", desc: "AI-powered real-time research engine with verified citation sources.", tag: "Research Assistant", link: "https://perplexity.ai" },
+                { name: "Cursor AI", desc: "The leading AI-native code editor designed for high-speed software development.", tag: "Developer Tool", link: "https://cursor.com" },
+                { name: "ElevenLabs", desc: "Ultra-realistic AI text-to-speech voice generator for video content creators.", tag: "AI Audio & Voice", link: "https://elevenlabs.io" }
             ],
             jobs: [
-                { name: "RemoteOK", desc: "Global remote opportunities in software, design & writing.", url: "https://remoteok.com" },
-                { name: "We Work Remotely", desc: "Largest platform for finding non-location restricted jobs.", url: "https://weworkremotely.com" },
-                { name: "Wellfound (AngelList)", desc: "Join innovative tech startups globally.", url: "https://wellfound.com" }
+                { name: "RemoteOK", desc: "Global job board featuring high-paying remote roles in software, marketing, and design.", tag: "Global Remote", link: "https://remoteok.com" },
+                { name: "We Work Remotely", desc: "One of the world's largest remote work communities with 100k+ monthly listings.", tag: "Tech & Non-Tech", link: "https://weworkremotely.com" },
+                { name: "Wellfound (AngelList)", desc: "Discover remote job openings at fast-growing tech startups worldwide.", tag: "Startup Jobs", link: "https://wellfound.com" },
+                { name: "FlexJobs", desc: "Vetted remote job listings with zero spam across customer service, tech, and writing.", tag: "Vetted Careers", link: "https://flexjobs.com" },
+                { name: "Turing", desc: "AI-powered platform matching top remote developers with leading US companies.", tag: "Software Engineers", link: "https://turing.com" },
+                { name: "Remote.co", desc: "Curated remote work opportunities and guides for remote teams.", tag: "Flexible Work", link: "https://remote.co" }
             ],
             research: [
-                { name: "Google Scholar", desc: "Search millions of academic papers, patents, and literature.", url: "https://scholar.google.com" },
-                { name: "ResearchGate", desc: "Connect with scientific researchers & access papers.", url: "https://researchgate.net" },
-                { name: "ArXiv", desc: "Free open-access archive for physics, math & CS papers.", url: "https://arxiv.org" }
+                { name: "Google Scholar", desc: "Search across millions of peer-reviewed papers, academic theses, and patents.", tag: "Academic Search", link: "https://scholar.google.com" },
+                { name: "arXiv", desc: "Open-access archive for 2M+ scholarly articles in physics, computer science, and math.", tag: "Open Science", link: "https://arxiv.org" },
+                { name: "ResearchGate", desc: "Academic social network to discover research publications and connect with authors.", tag: "Research Network", link: "https://researchgate.net" },
+                { name: "Semantic Scholar", desc: "AI-driven research tool that extracts key findings from scientific publications.", tag: "AI Literature", link: "https://semanticscholar.org" },
+                { name: "JSTOR", desc: "Digital library for academic books, journals, and primary historical sources.", tag: "Digital Library", link: "https://jstor.org" }
             ]
         };
 
-        function switchTab(category) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        let currentDirCategory = 'ai';
 
-            const container = document.getElementById('tab-content');
+        function switchDirectoryTab(category) {
+            currentDirCategory = category;
+            document.querySelectorAll('.dir-btn').forEach(btn => {
+                btn.classList.remove('bg-universe-emerald', 'text-white');
+                btn.classList.add('bg-universe-800', 'text-gray-300');
+            });
+            
+            const activeBtn = document.getElementById(`dir-tab-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-universe-emerald', 'text-white');
+                activeBtn.classList.remove('bg-universe-800', 'text-gray-300');
+            }
+
+            renderDirectoryItems(webDirectory[category]);
+        }
+
+        function renderDirectoryItems(items) {
+            const container = document.getElementById('directoryFeed');
             container.innerHTML = '';
 
-            toolsData[category].forEach(tool => {
+            items.forEach(item => {
                 container.innerHTML += `
-                    <div class="card">
-                        <h3>${tool.name}</h3>
-                        <p>${tool.desc}</p>
-                        <a href="${tool.url}" target="_blank" class="tool-link">
-                            Visit Platform <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <div class="glass-card p-6 space-y-4 tool-item">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-universe-emerald/20 text-universe-emerald text-xs font-bold">${item.tag}</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-white">${item.name}</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">${item.desc}</p>
+                        <a href="${item.link}" target="_blank" class="inline-flex items-center w-full justify-center py-2 rounded-lg bg-universe-800 hover:bg-universe-700 text-white text-xs font-bold transition-colors">
+                            Visit ${item.name} <i class="fa-solid fa-external-link ml-1.5 text-[10px]"></i>
                         </a>
                     </div>
                 `;
             });
         }
 
-        // Initialize Tab
-        switchTab('ai');
+        function searchTools() {
+            const query = document.getElementById('toolSearchInput').value.toLowerCase();
+            const currentItems = webDirectory[currentDirCategory];
+            const filtered = currentItems.filter(item => 
+                item.name.toLowerCase().includes(query) || 
+                item.desc.toLowerCase().includes(query) || 
+                item.tag.toLowerCase().includes(query)
+            );
+            renderDirectoryItems(filtered);
+        }
 
-        // Project Form Handler
-        document.getElementById('projectForm').addEventListener('submit', function(e) {
+        // Initialize directory on load
+        switchDirectoryTab('ai');
+
+        // ================= PROJECT FILTERING =================
+        function filterProjects(cat) {
+            document.querySelectorAll('.proj-tab').forEach(btn => {
+                btn.classList.remove('bg-universe-accent', 'text-white');
+                btn.classList.add('bg-universe-800', 'text-gray-300');
+            });
+            event.target.classList.add('bg-universe-accent', 'text-white');
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function handleProjectSubmit(e) {
             e.preventDefault();
-            const title = document.getElementById('pTitle').value;
-            const desc = document.getElementById('pDesc').value;
+            const name = document.getElementById('modalProjName').value;
+            const desc = document.getElementById('modalProjDesc').value;
+            const link = document.getElementById('modalProjLink').value || '#';
 
-            const list = document.getElementById('projectList');
-            const newProject = document.createElement('div');
-            newProject.style.background = 'rgba(255,255,255,0.03)';
-            newProject.style.padding = '12px';
-            newProject.style.borderRadius = '8px';
-            newProject.innerHTML = `<h4 style="color: var(--accent-cyan);">${title}</h4><p style="font-size: 0.9rem; color: var(--text-muted);">${desc}</p>`;
+            const grid = document.getElementById('projectsGrid');
+            const newCard = document.createElement('div');
+            newCard.className = "glass-card p-6 space-y-4 project-card";
+            newCard.setAttribute('data-category', 'community');
+            newCard.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded bg-universe-pink/20 text-universe-pink text-xs font-bold">Community Submission</span>
+                    <i class="fa-solid fa-sparkles text-xl text-universe-pink"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-white">${name}</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">${desc}</p>
+                <a href="${link}" target="_blank" class="inline-flex items-center text-xs font-bold text-universe-pink hover:underline">
+                    View Submitted Project <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                </a>
+            `;
 
-            list.prepend(newProject);
-            this.reset();
-            alert('Project submitted successfully!');
-        });
+            grid.prepend(newCard);
+            closeModal('submitProjectModal');
+            alert('Your project has been successfully submitted to TrustInUniverse!');
+        }
 
-        // Mini Game Logic
-        let clicks = 0;
-        let timer = null;
-        let active = false;
+        // ================= MODAL CONTROLLERS =================
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
 
-        function handleClicker() {
-            const btn = document.getElementById('clickerBtn');
-            const scoreDisplay = document.getElementById('clickScore');
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
 
-            if (!active) {
-                active = true;
-                clicks = 0;
-                scoreDisplay.innerText = clicks;
-                btn.innerText = "CLICK FAST!";
-                
-                timer = setTimeout(() => {
-                    active = false;
-                    btn.innerText = "Play Again";
-                    alert(`Time is up! Your score: ${clicks} clicks!`);
-                }, 5000);
-            } else {
-                clicks++;
-                scoreDisplay.innerText = clicks;
+        function openGuideModal(title) {
+            document.getElementById('guideModalTitle').innerText = title;
+            const body = document.getElementById('guideModalBody');
+            
+            body.innerHTML = `
+                <div class="p-3 bg-universe-900 rounded-lg border border-white/5 font-mono text-universe-accent text-[11px]">
+                    <strong>TrustInUniverse Official Masterclass Module:</strong> ${title}
+                </div>
+                <p>Welcome to the comprehensive breakdown of <strong>${title}</strong>. This module is curated to help you achieve real-world results.</p>
+                <h4 class="font-bold text-white text-sm mt-3">Core Action Items:</h4>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Define clear objectives before starting production or coding.</li>
+                    <li>Iterate based on analytics and community feedback.</li>
+                    <li>Utilize open-source tools and AI assistants to accelerate delivery.</li>
+                </ul>
+                <p class="text-gray-400 pt-2">For live support, join our creator ecosystem on <a href="https://trustinuniverse.wordpress.com" target="_blank" class="text-universe-cyan underline">TrustInUniverse</a>.</p>
+            `;
+            openModal('guideModal');
+        }
+
+        // ================= FUN & MINI-GAMES ENGINES =================
+        // Game 1: Speed Typing
+        let typingStartTime = null;
+        function checkTypingSpeed() {
+            const target = document.getElementById('targetText').innerText.trim();
+            const typed = document.getElementById('typingInput').value;
+
+            if (!typingStartTime && typed.length > 0) {
+                typingStartTime = new Date();
+            }
+
+            if (typed === target) {
+                const totalTimeSeconds = (new Date() - typingStartTime) / 1000;
+                const wordCount = target.split(' ').length;
+                const wpm = Math.round((wordCount / totalTimeSeconds) * 60);
+                document.getElementById('typingWpm').innerText = `${wpm} WPM!`;
+                alert(`Outstanding typing speed! You completed the test at ${wpm} Words Per Minute.`);
             }
         }
 
-        function checkTrivia() {
-            alert('Answer: HyperText Markup Language!');
+        function resetTypingGame() {
+            document.getElementById('typingInput').value = '';
+            document.getElementById('typingWpm').innerText = '0 WPM';
+            typingStartTime = null;
         }
+
+        // Game 2: Speed Clicker
+        let clickerScore = 0;
+        let clickerActive = false;
+        let clickerTimer = null;
+
+        function handleClickerGame() {
+            const btn = document.getElementById('clickerBtn');
+            const scoreDisplay = document.getElementById('clickerCount');
+
+            if (!clickerActive) {
+                clickerActive = true;
+                clickerScore = 0;
+                scoreDisplay.innerText = clickerScore;
+                btn.innerText = "CLICK FAST AS YOU CAN!";
+
+                clickerTimer = setTimeout(() => {
+                    clickerActive = false;
+                    btn.innerText = "Play Again";
+                    alert(`Time is up! Extraordinary effort! Your final score: ${clickerScore} clicks in 5 seconds.`);
+                }, 5000);
+            } else {
+                clickerScore++;
+                scoreDisplay.innerText = clickerScore;
+            }
+        }
+
+        // Game 3: Tech Trivia Quiz
+        const triviaQuestions = [
+            {
+                q: "What does HTML stand for?",
+                options: ["HyperText Markup Language", "High Tech Machine Language", "Hyperlink Text Management Logic", "Home Tool Markup Language"],
+                answer: 0
+            },
+            {
+                q: "Which AI model family was created by Anthropic?",
+                options: ["Gemini", "Claude", "ChatGPT", "Llama"],
+                answer: 1
+            },
+            {
+                q: "Which CSS framework utilizes utility classes like 'flex', 'pt-4', and 'text-white'?",
+                options: ["Bootstrap", "Bulma", "Tailwind CSS", "Foundation"],
+                answer: 2
+            }
+        ];
+
+        let currentTriviaIndex = 0;
+        let totalTriviaScore = 0;
+
+        function loadTriviaQuestion() {
+            const q = triviaQuestions[currentTriviaIndex];
+            document.getElementById('triviaQuestion').innerText = `Q${currentTriviaIndex + 1}: ${q.q}`;
+            
+            const optionsContainer = document.getElementById('triviaOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                optionsContainer.innerHTML += `
+                    <button onclick="checkTriviaAnswer(${idx})" class="p-3 rounded-lg bg-universe-800 hover:bg-universe-700 text-left text-xs text-white font-medium border border-white/5 transition-colors">
+                        ${opt}
+                    </button>
+                `;
+            });
+        }
+
+        function checkTriviaAnswer(idx) {
+            const q = triviaQuestions[currentTriviaIndex];
+            if (idx === q.answer) {
+                totalTriviaScore += 10;
+                document.getElementById('triviaScore').innerText = `Score: ${totalTriviaScore}`;
+                alert('Correct answer! +10 Points');
+            } else {
+                alert(`Incorrect. The correct answer was: ${q.options[q.answer]}`);
+            }
+
+            currentTriviaIndex = (currentTriviaIndex + 1) % triviaQuestions.length;
+            loadTriviaQuestion();
+        }
+
+        // Load Trivia on launch
+        loadTriviaQuestion();
     </script>
 </body>
 </html>
