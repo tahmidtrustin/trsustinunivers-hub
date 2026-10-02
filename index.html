@@ -3,856 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustInUniverse | The Ultimate Digital Ecosystem</title>
-    <!-- Modern Typography & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>All-in-One Dashboard & Tools Platform</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #030712;
-            --bg-card: rgba(17, 24, 39, 0.7);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --border-hover: #6366f1;
-            
-            --primary-glow: #6366f1;
-            --secondary-glow: #06b6d4;
-            --pink-glow: #ec4899;
-            --emerald-glow: #10b981;
-            --amber-glow: #f59e0b;
-
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            
-            --gradient-1: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-            --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --border-color: #30363d;
+            --accent-color: #58a6ff;
+            --accent-hover: #1f6feb;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --success-color: #238636;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-main);
             color: var(--text-main);
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 50%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 90%, rgba(6, 182, 212, 0.12) 0%, transparent 40%);
-            background-attachment: fixed;
-        }
-
-        /* Extraordinary Glassmorphism Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 8px 16px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--text-main);
-            background: rgba(99, 102, 241, 0.15);
-            border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
-        }
-
-        .nav-btn {
-            background: var(--gradient-1);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-            transition: 0.3s;
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 7rem 2rem 4rem;
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #a5b4fc;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            padding: 2rem 1rem;
             line-height: 1.6;
         }
 
-        /* Section Global Rules */
-        section {
-            max-width: 1400px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        .section-header {
-            margin-bottom: 3.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
         }
 
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
+        header h1 {
             font-size: 2.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
         }
 
-        .section-subtitle {
+        header p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-top: 0.5rem;
         }
 
-        /* Grid & Cards System */
-        .grid {
+        /* Navigation / Filter Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-hover);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Sections Grid */
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .card {
             background: var(--bg-card);
-            backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: all 0.35s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-hover);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(99, 102, 241, 0.25);
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            color: var(--secondary-glow);
-            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Buttons & Controls */
-        .btn {
-            display: inline-flex;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 14px;
-            background: var(--gradient-1);
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            gap: 0.5rem;
         }
 
-        .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
-        }
-
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.03);
+        /* Inputs & Buttons */
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            background: rgba(0,0,0,0.2);
             border: 1px solid var(--border-color);
+            border-radius: 8px;
             color: var(--text-main);
         }
 
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--secondary-glow);
-            color: var(--secondary-glow);
-        }
-
-        /* Filter Controls */
-        .filter-bar {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 10px 22px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
+        .btn {
+            background: var(--accent-hover);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-glow);
-            color: white;
-            border-color: var(--primary-glow);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-        }
-
-        .search-box {
-            position: relative;
-            max-width: 400px;
+            font-weight: 500;
             width: 100%;
+            transition: background 0.2s;
         }
 
-        .search-box input {
-            width: 100%;
-            padding: 12px 20px 12px 48px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
+        .btn:hover {
+            background: var(--accent-color);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-hover);
             color: white;
-            font-size: 0.95rem;
-            outline: none;
-            transition: 0.3s;
         }
 
-        .search-box input:focus {
-            border-color: var(--secondary-glow);
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-
-        /* Embedded In-App Browser Modal */
+        /* Modal / In-App Viewer */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(15px);
-            z-index: 2000;
-            padding: 2rem;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
         }
 
         .modal-content {
-            background: var(--bg-dark);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            width: 90%;
+            height: 85%;
+            margin: 3% auto;
+            background: var(--bg-card);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            border: 1px solid var(--border-color);
         }
 
         .modal-header {
-            padding: 1rem 1.5rem;
-            background: rgba(17, 24, 39, 0.9);
+            padding: 1rem;
+            background: var(--bg-main);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        .modal-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            color: var(--secondary-glow);
-        }
-
-        .close-btn {
-            background: rgba(236, 72, 153, 0.2);
-            color: var(--pink-glow);
-            border: 1px solid rgba(236, 72, 153, 0.4);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
+        .modal-close {
             cursor: pointer;
-            font-size: 1.1rem;
-            transition: 0.3s;
+            font-size: 1.5rem;
+            color: var(--text-muted);
         }
 
-        .close-btn:hover {
-            background: var(--pink-glow);
-            color: white;
-        }
-
-        .modal-body {
-            flex: 1;
+        iframe {
             width: 100%;
-            height: 100%;
-        }
-
-        .modal-body iframe {
-            width: 100%;
-            height: 100%;
+            height: calc(100% - 60px);
             border: none;
         }
 
-        /* Forms */
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border-color);
-            color: white;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--primary-glow);
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            background: rgba(3, 7, 18, 0.95);
+        .result-box {
+            margin-top: 1rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation Bar -->
-    <header>
-        <div class="nav-container">
-            <div class="logo" onclick="window.scrollTo({top:0})">
-                <i class="fa-solid fa-atom"></i> TrustInUniverse
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#ai-directory"><i class="fa-solid fa-brain"></i> AI Directory</a></li>
-                    <li><a href="#remote-jobs"><i class="fa-solid fa-laptop-house"></i> Remote Jobs</a></li>
-                    <li><a href="#project-hub"><i class="fa-solid fa-code-branch"></i> Project Lab</a></li>
-                    <li><a href="#creation-guides"><i class="fa-solid fa-photo-film"></i> Content Guides</a></li>
-                    <li><a href="#stem-education"><i class="fa-solid fa-calculator"></i> STEM Hub</a></li>
-                    <li><a href="#fun-zone"><i class="fa-solid fa-gamepad"></i> Gaming Zone</a></li>
-                </ul>
-            </nav>
-            <a href="#project-hub" class="nav-btn"><i class="fa-solid fa-plus"></i> Submit Project</a>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Dashboard & STEM Hub</h1>
+            <p>Access AI Tools, STEM Calculators, Projects & Job Platforms</p>
+        </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-badge">
-            <i class="fa-solid fa-sparkles"></i> The Mega Digital Hub for Innovators
-        </div>
-        <h1>All-in-One Platform for <span>AI, Projects, Jobs & STEM</span></h1>
-        <p>Explore thousands of curated AI tools, apply for global remote opportunities, build & showcase full-stack projects, and study advanced engineering concepts—all inside one browser page.</p>
-    </div>
-
-    <!-- SECTION 1: AI TOOLS DIRECTORY (HAZAR HAZAR AI) -->
-    <section id="ai-directory">
-        <div class="section-header">
-            <div>
-                <div class="section-title">
-                    <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--secondary-glow);"></i> AI Tools Directory
-                </div>
-                <div class="section-subtitle">Search and discover thousands of specialized AI tools across various industries</div>
-            </div>
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="aiSearchInput" placeholder="Search AI tools (e.g. Midjourney, ChatGPT)..." onkeyup="filterAITools()">
-            </div>
+        <!-- Search Bar -->
+        <div style="margin-bottom: 2rem;">
+            <input type="text" id="customSearchUrl" placeholder="Search Google or enter URL to load in-app..." onkeypress="if(event.key === 'Enter') executeInAppSearch()">
         </div>
 
-        <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterAICategory('all', this)">All Category</button>
-            <button class="filter-btn" onclick="filterAICategory('code', this)">Coding & Dev</button>
-            <button class="filter-btn" onclick="filterAICategory('image', this)">Image & Video</button>
-            <button class="filter-btn" onclick="filterAICategory('writing', this)">Writing & LLMs</button>
-            <button class="filter-btn" onclick="filterAICategory('audio', this)">Audio & Voice</button>
-            <button class="filter-btn" onclick="filterAICategory('productivity', this)">Productivity</button>
+        <!-- Filters -->
+        <div class="tabs">
+            <button class="filter-btn active" onclick="filterAICategory('all', this)">All AI Tools</button>
+            <button class="filter-btn" onclick="filterAICategory('code', this)">Coding</button>
+            <button class="filter-btn" onclick="filterAICategory('image', this)">Image Gen</button>
+            <button class="filter-btn" onclick="filterAICategory('chat', this)">Chatbots</button>
         </div>
 
-        <div class="grid" id="aiGrid">
-            <!-- Dynamically Populated by JS -->
-        </div>
-    </section>
-
-    <!-- SECTION 2: REMOTE JOBS & FREELANCE DIRECTORY -->
-    <section id="remote-jobs">
-        <div class="section-header">
-            <div>
-                <div class="section-title">
-                    <i class="fa-solid fa-briefcase" style="color: var(--emerald-glow);"></i> Global Remote Work Directories
-                </div>
-                <div class="section-subtitle">Direct access to the best job portals, tech startups, and remote career platforms</div>
-            </div>
+        <!-- AI Search Box -->
+        <div style="margin-bottom: 2rem;">
+            <input type="text" id="aiSearchInput" placeholder="Filter tools by name or description..." oninput="filterAITools()">
         </div>
 
-        <div class="grid" id="jobsGrid">
-            <!-- Dynamically Populated by JS -->
-        </div>
-    </section>
-
-    <!-- SECTION 3: PROJECT LAB (ADD, BUILD & LEARN WITH IN-APP GOOGLE SEARCH) -->
-    <section id="project-hub">
-        <div class="section-header">
-            <div>
-                <div class="section-title">
-                    <i class="fa-solid fa-cubes-stacked" style="color: var(--pink-glow);"></i> Project Hub & Search Ecosystem
-                </div>
-                <div class="section-subtitle">Add your projects, build from tutorials, or search any web resource inside our frame</div>
-            </div>
-        </div>
-
-        <!-- Google/Web Search Bar Inside App -->
-        <div style="background: var(--bg-card); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 3rem;">
-            <h3 style="margin-bottom: 1rem;"><i class="fa-solid fa-globe" style="color:var(--secondary-glow);"></i> In-App Search & Web Embedder</h3>
-            <p style="color:var(--text-muted); margin-bottom: 1.5rem;">Enter any keyword or website URL to search and open it directly inside this website without leaving the page!</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <input type="text" id="customSearchUrl" placeholder="Enter URL (e.g., https://wikipedia.org) or search topic..." style="flex:1; padding:14px; border-radius:12px; background:rgba(0,0,0,0.5); border:1px solid var(--border-color); color:white; outline:none;">
-                <button class="btn" onclick="executeInAppSearch()"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open In Page</button>
-            </div>
-        </div>
-
-        <div class="grid">
-            <!-- Submit Your Project Card -->
-            <div class="card">
-                <div>
-                    <div class="card-icon" style="color: var(--pink-glow);"><i class="fa-solid fa-folder-plus"></i></div>
-                    <h3>Add Your Project</h3>
-                    <p>Share your repository, app, or portfolio with thousands of creators worldwide.</p>
-                </div>
-                <form id="addProjectForm" style="margin-top: 1rem;">
-                    <div class="form-group">
-                        <input type="text" id="projTitle" placeholder="Project Title" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="projDesc" rows="3" placeholder="Brief Description..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="url" id="projLink" placeholder="Project / GitHub Link (e.g., https://...)" required>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Publish To Hub</button>
-                </form>
-            </div>
-
-            <!-- Built-in Learning Projects Card -->
+        <!-- Main Dashboard Content Grid -->
+        <div class="grid-container">
+            <!-- AI Tools List -->
             <div class="card" style="grid-column: span 2;">
-                <h3><i class="fa-solid fa-graduation-cap" style="color: var(--amber-glow);"></i> Build & Learn Real Projects</h3>
-                <p style="color:var(--text-muted); margin-bottom: 1.5rem;">Pick a project, read its architectural guide, and view live implementations directly.</p>
-                
-                <div id="liveProjectsList" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <!-- Dynamically Populated Project Cards -->
-                </div>
+                <h3><i class="fa-solid fa-robot"></i> AI Tools Directory</h3>
+                <div id="aiToolsList" class="grid-container" style="margin-bottom: 0;"></div>
             </div>
-        </div>
-    </section>
 
-    <!-- SECTION 4: CONTENT CREATION MASTERCLASSES -->
-    <section id="creation-guides">
-        <div class="section-header">
-            <div>
-                <div class="section-title">
-                    <i class="fa-solid fa-film" style="color: var(--amber-glow);"></i> Content Creator Playbook
-                </div>
-                <div class="section-subtitle">Frameworks for video editing, scriptwriting retention, and viral distribution</div>
+            <!-- Job Platforms -->
+            <div class="card">
+                <h3><i class="fa-solid fa-briefcase"></i> Job Platforms</h3>
+                <div id="jobPlatformsList" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
             </div>
         </div>
 
-        <div class="grid">
+        <!-- STEM Tools & Mini Game -->
+        <div class="grid-container">
+            <!-- Kinematics Calculator -->
             <div class="card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>5-Second Retention Hooks</h3>
-                    <p>Master psychological hooks that keep audience drop-off under 15% on YouTube & Shorts.</p>
-                </div>
-                <button class="btn btn-outline" onclick="openInAppModal('Retention Hook Masterclass', 'https://www.youtube.com/embed/dQw4w9WgXcQ')"><i class="fa-solid fa-play"></i> Watch Playbook</button>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
-                    <h3>DaVinci & Premiere Color Grading</h3>
-                    <p>Complete cinematic LUTs setup, vector-scope matching, and skin tone correction.</p>
-                </div>
-                <button class="btn btn-outline" onclick="alert('Guide: Adjust Midtone Details +30, use Rec.709 color space transform, and balance teal/orange shadows.')">Read Quick Setup</button>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>YouTube SEO & Click-Through Optimization</h3>
-                    <p>A/B testing thumbnail contrast ratios and metadata indexing for Google ranking.</p>
-                </div>
-                <button class="btn btn-outline" onclick="alert('Rule 1: Never place text on the bottom right (timestamp overlap). Rule 2: High contrast faces boost CTR by 35%.')">Read Blueprint</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: STEM & ENGINEERING EDUCATION -->
-    <section id="stem-education">
-        <div class="section-header">
-            <div>
-                <div class="section-title">
-                    <i class="fa-solid fa-atom" style="color: var(--secondary-glow);"></i> STEM & Engineering Lab
-                </div>
-                <div class="section-subtitle">Interactive Physics, Mathematics, and Computer Science Calculators</div>
-            </div>
-        </div>
-
-        <div class="grid">
-            <!-- Kinematics Solver -->
-            <div class="card">
-                <h3><i class="fa-solid fa-rocket" style="color: var(--secondary-glow);"></i> Physics Kinematics Solver</h3>
-                <p>Calculate displacement ($s$), final velocity ($v$), and acceleration ($a$).</p>
-                
-                <div class="form-group"><input type="number" id="kU" placeholder="Initial Velocity u (m/s)"></div>
-                <div class="form-group"><input type="number" id="kA" placeholder="Acceleration a (m/s²)"></div>
-                <div class="form-group"><input type="number" id="kT" placeholder="Time t (seconds)"></div>
-                
-                <button class="btn" onclick="calculateKinematics()">Calculate Motion</button>
-                <div id="kinematicsResult" style="margin-top: 1rem; font-weight: 700; color: var(--secondary-glow);"></div>
+                <h3><i class="fa-solid fa-calculator"></i> Kinematics Calculator</h3>
+                <input type="number" id="kU" placeholder="Initial Velocity (u) m/s">
+                <input type="number" id="kA" placeholder="Acceleration (a) m/s²">
+                <input type="number" id="kT" placeholder="Time (t) s">
+                <button class="btn" onclick="calculateKinematics()">Calculate</button>
+                <div id="kinematicsResult" class="result-box">Results will appear here...</div>
             </div>
 
             <!-- Quadratic Equation Solver -->
             <div class="card">
-                <h3><i class="fa-solid fa-square-root-variable" style="color: var(--pink-glow);"></i> Quadratic Equation Solver</h3>
-                <p>Find roots for equation: $ax^2 + bx + c = 0$</p>
-                
-                <div class="form-group"><input type="number" id="quadA" placeholder="Coefficient a"></div>
-                <div class="form-group"><input type="number" id="quadB" placeholder="Coefficient b"></div>
-                <div class="form-group"><input type="number" id="quadC" placeholder="Coefficient c"></div>
-                
-                <button class="btn" onclick="solveQuadratic()">Solve Roots</button>
-                <div id="quadResult" style="margin-top: 1rem; font-weight: 700; color: var(--pink-glow);"></div>
+                <h3><i class="fa-solid fa-square-root-variable"></i> Quadratic Solver</h3>
+                <input type="number" id="quadA" placeholder="Coefficient a">
+                <input type="number" id="quadB" placeholder="Coefficient b">
+                <input type="number" id="quadC" placeholder="Coefficient c">
+                <button class="btn" onclick="solveQuadratic()">Solve Equation</button>
+                <div id="quadResult" class="result-box">Roots will appear here...</div>
             </div>
-        </div>
-    </section>
 
-    <!-- SECTION 6: FUN & GAMING ZONE -->
-    <section id="fun-zone">
-        <div class="section-header">
-            <div>
-                <div class="section-title">
-                    <i class="fa-solid fa-gamepad" style="color: var(--pink-glow);"></i> Fun & Mini Games Zone
+            <!-- Mini Speed Test Game -->
+            <div class="card">
+                <h3><i class="fa-solid fa-gamepad"></i> CPS Speed Test</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Test your click speed in 5 seconds!</p>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <span id="clickScoreDisplay" style="font-size: 2.5rem; font-weight: bold; color: var(--accent-color);">0</span>
                 </div>
-                <div class="section-subtitle">Take a break with reaction testing and developer trivia</div>
+                <button id="clickerGameBtn" class="btn" onclick="runClickTest()">Start Speed Test</button>
             </div>
         </div>
 
-        <div class="grid">
-            <div class="card" style="text-align: center;">
-                <i class="fa-solid fa-bolt-lightning" style="font-size: 3rem; color: var(--amber-glow); margin-bottom: 1rem;"></i>
-                <h3>CPS Speed Reaction Test</h3>
-                <p>How many times can you click in 5 seconds?</p>
-                <div id="clickScoreDisplay" style="font-size: 3.5rem; font-weight: 800; color: var(--amber-glow); margin: 1rem 0;">0</div>
-                <button class="btn" id="clickerGameBtn" onclick="runClickTest()">Start Speed Test</button>
-            </div>
+        <!-- Projects Section -->
+        <div class="card" style="margin-top: 2rem;">
+            <h3><i class="fa-solid fa-code"></i> Live Projects</h3>
+            <div id="liveProjectsList" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;"></div>
 
-            <div class="card" style="text-align: center;">
-                <i class="fa-solid fa-brain" style="font-size: 3rem; color: var(--secondary-glow); margin-bottom: 1rem;"></i>
-                <h3>Developer Trivia Challenge</h3>
-                <p>Which data structure uses LIFO (Last In, First Out) principle?</p>
-                <div id="triviaAnswerText" style="display: none; font-size: 1.25rem; font-weight: 700; color: var(--emerald-glow); margin: 1.5rem 0;">
-                    Answer: STACK
-                </div>
-                <button class="btn btn-outline" style="margin-top:1rem;" onclick="document.getElementById('triviaAnswerText').style.display='block'">Reveal Answer</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- IN-APP BROWSER MODAL (OPENS EVERYTHING INSIDE THIS PAGE) -->
-    <div id="inAppModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title" id="modalTitle">
-                    <i class="fa-solid fa-globe"></i> In-App Explorer
-                </div>
-                <button class="close-btn" onclick="closeInAppModal()"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="modal-body">
-                <iframe id="modalFrame" src="about:blank"></iframe>
-            </div>
+            <h4>Add New Project</h4>
+            <form id="addProjectForm" style="margin-top: 1rem;">
+                <input type="text" id="projTitle" placeholder="Project Title" required>
+                <input type="text" id="projDesc" placeholder="Project Description" required>
+                <input type="url" id="projLink" placeholder="Project Demo / Source URL" required>
+                <button type="submit" class="btn">Publish Project</button>
+            </form>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 TrustInUniverse. Designed for world-class creators, developers, and engineers.</p>
-    </footer>
+    <!-- In-App Viewer Modal -->
+    <div id="inAppModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modalTitle" style="font-weight: 600;">In-App Browser</span>
+                <span class="modal-close" onclick="closeInAppModal()">&times;</span>
+            </div>
+            <iframe id="modalFrame" src="about:blank"></iframe>
+        </div>
+    </div>
 
-    <!-- JavaScript Application Engine -->
+    <!-- JavaScript Data and Functions -->
     <script>
-        // Massive Database of AI Tools
+        // Sample AI Tools Data
         const aiToolsData = [
-            { name: "ChatGPT", desc: "Advanced LLM for conversational AI, writing, and logic.", category: "writing", url: "https://chatgpt.com" },
-            { name: "Google Gemini", desc: "Multimodal AI model integrated with real-time web search.", category: "writing", url: "https://gemini.google.com" },
-            { name: "Claude AI", desc: "State-of-the-art model for deep coding & long context tasks.", category: "code", url: "https://claude.ai" },
-            { name: "Midjourney", desc: "Ultra-realistic cinematic text-to-image generator.", category: "image", url: "https://midjourney.com" },
-            { name: "GitHub Copilot", desc: "AI pair programmer auto-completing code in IDE.", category: "code", url: "https://github.com/features/copilot" },
-            { name: "ElevenLabs", desc: "Hyper-realistic voice cloning and text-to-speech synthesis.", category: "audio", url: "https://elevenlabs.io" },
-            { name: "Runway Gen-2", desc: "Text-to-video AI generation for VFX and film.", category: "image", url: "https://runwayml.com" },
-            { name: "Notion AI", desc: "AI writing assistant embedded inside workspace docs.", category: "productivity", url: "https://notion.so" },
-            { name: "Cursor Editor", desc: "AI-native code editor built for rapid software development.", category: "code", url: "https://cursor.com" },
-            { name: "Suno AI", desc: "Generate complete studio-quality songs from text prompts.", category: "audio", url: "https://suno.com" }
+            { name: "ChatGPT", category: "chat", desc: "Conversational AI by OpenAI", url: "https://chat.openai.com" },
+            { name: "GitHub Copilot", category: "code", desc: "AI pair programmer", url: "https://github.com/features/copilot" },
+            { name: "Midjourney", category: "image", desc: "Text to high-quality images", url: "https://www.midjourney.com" },
+            { name: "Claude AI", category: "chat", desc: "Advanced reasoning assistant", url: "https://claude.ai" },
+            { name: "v0.dev", category: "code", desc: "Generative UI system by Vercel", url: "https://v0.dev" }
         ];
 
-        // Global Remote Jobs Platforms Database
+        // Sample Job Platforms Data
         const jobPlatformsData = [
-            { name: "RemoteOK", desc: "Top tech, design, and developer remote positions worldwide.", url: "https://remoteok.com" },
-            { name: "We Work Remotely", desc: "The largest global community for remote engineering jobs.", url: "https://weworkremotely.com" },
-            { name: "Wellfound (AngelList)", desc: "Direct outreach to fast-growing AI and Web3 startups.", url: "https://wellfound.com" },
-            { name: "Toptal", desc: "Exclusive network for top 3% freelance engineers & designers.", url: "https://toptal.com" },
-            { name: "Upwork Global", desc: "Largest freelance marketplace for all digital skills.", url: "https://upwork.com" }
+            { name: "LinkedIn", url: "https://www.linkedin.com" },
+            { name: "GitHub Jobs / Remote", url: "https://github.com" },
+            { name: "Wellfound (AngelList)", url: "https://wellfound.com" }
         ];
 
-        // Default Built-in Projects
-        const defaultProjects = [
-            { title: "React Real-Time Dashboard", desc: "Interactive analytics dashboard with Chart.js and Tailwind CSS.", url: "https://react.dev" },
-            { title: "Python Autonomous Web Scraper", desc: "Asynchronous Playwright scraper for competitive data gathering.", url: "https://python.org" },
-            { title: "TensorFlow Computer Vision App", desc: "Real-time object detection running directly inside WebGL.", url: "https://tensorflow.org" }
+        // Default Projects
+        let defaultProjects = [
+            { title: "Portfolio Webapp", desc: "Built with HTML, CSS, JS", url: "https://example.com" }
         ];
 
         // Render AI Tools
-        function renderAITools(items) {
-            const grid = document.getElementById('aiGrid');
-            grid.innerHTML = '';
-            items.forEach(tool => {
-                grid.innerHTML += `
-                    <div class="card">
-                        <div>
-                            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
-                            <h3>${tool.name}</h3>
-                            <p>${tool.desc}</p>
-                        </div>
-                        <button class="btn btn-outline" onclick="openInAppModal('${tool.name}', '${tool.url}')">
-                            Open Tool In Page <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </button>
+        function renderAITools(tools) {
+            const container = document.getElementById('aiToolsList');
+            container.innerHTML = '';
+            tools.forEach(tool => {
+                container.innerHTML += `
+                    <div class="card" style="padding: 1rem;">
+                        <h4 style="color: var(--text-main);">${tool.name}</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0;">${tool.desc}</p>
+                        <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.8rem;" onclick="openInAppModal('${tool.name}', '${tool.url}')">Open Tool</button>
                     </div>
                 `;
             });
         }
 
-        // Render Jobs Platforms
+        // Render Job Platforms
         function renderJobPlatforms() {
-            const grid = document.getElementById('jobsGrid');
-            grid.innerHTML = '';
+            const container = document.getElementById('jobPlatformsList');
+            container.innerHTML = '';
             jobPlatformsData.forEach(job => {
-                grid.innerHTML += `
-                    <div class="card">
-                        <div>
-                            <div class="card-icon" style="color:var(--emerald-glow);"><i class="fa-solid fa-building-user"></i></div>
-                            <h3>${job.name}</h3>
-                            <p>${job.desc}</p>
-                        </div>
-                        <button class="btn btn-outline" onclick="openInAppModal('${job.name}', '${job.url}')">
-                            Explore Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </button>
-                    </div>
+                container.innerHTML += `
+                    <button class="btn btn-outline" style="text-align: left; display: flex; justify-content: space-between; align-items: center;" onclick="openInAppModal('${job.name}', '${job.url}')">
+                        <span>${job.name}</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 `;
             });
         }
 
-        // Render Projects List
+        // Render Live Projects
         function renderProjects() {
             const container = document.getElementById('liveProjectsList');
             container.innerHTML = '';
             defaultProjects.forEach(proj => {
-                const item = document.createElement('div');
-                item.style.cssText = "background:rgba(0,0,0,0.4); padding:1.2rem; border-radius:16px; border:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;";
-                item.innerHTML = `
-                    <div>
-                        <h4 style="color:var(--secondary-glow); font-size:1.1rem;">${proj.title}</h4>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px;">${proj.desc}</p>
+                container.innerHTML += `
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: 16px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--text-main);">${proj.title}</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">${proj.desc}</p>
+                        </div>
+                        <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;" onclick="openInAppModal('${proj.title}', '${proj.url}')">
+                            View Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </button>
                     </div>
-                    <button class="btn btn-outline" style="padding:8px 16px; font-size:0.85rem;" onclick="openInAppModal('${proj.title}', '${proj.url}')">
-                        Inspect Project <i class="fa-solid fa-eye"></i>
-                    </button>
                 `;
-                container.appendChild(item);
             });
-        }
-
-        // In-App Search Function
-        function executeInAppSearch() {
-            const input = document.getElementById('customSearchUrl').value.trim();
-            if(!input) return;
-            
-            let targetUrl = input;
-            if(!input.startsWith('http://') && !input.startsWith('https://')) {
-                // If not a URL, use Wikipedia / Search Engine query
-                targetUrl = `https://en.m.wikipedia.org/wiki/${encodeURIComponent(input)}`;
-            }
-            openInAppModal(`Search Result: ${input}`, targetUrl);
-        }
-
-        // In-App Modal Handler
-        function openInAppModal(title, url) {
-            document.getElementById('modalTitle').innerHTML = `<i class="fa-solid fa-globe"></i> ${title}`;
-            document.getElementById('modalFrame').src = url;
-            document.getElementById('inAppModal').style.display = 'block';
-        }
-
-        function closeInAppModal() {
-            document.getElementById('inAppModal').style.display = 'none';
-            document.getElementById('modalFrame').src = 'about:blank';
-        }
-
-        // Filter AI Tools
-        function filterAICategory(cat, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            if(cat === 'all') {
-                renderAITools(aiToolsData);
-            } else {
-                const filtered = aiToolsData.filter(t => t.category === cat);
-                renderAITools(filtered);
-            }
-        }
-
-        function filterAITools() {
-            const query = document.getElementById('aiSearchInput').value.toLowerCase();
-            const filtered = aiToolsData.filter(t => t.name.toLowerCase().includes(query) || t.desc.toLowerCase().includes(query));
-            renderAITools(filtered);
         }
 
         // Add Project Form Handler
@@ -865,10 +371,59 @@
             defaultProjects.unshift({ title, desc, url });
             renderProjects();
             this.reset();
-            alert('Your project was successfully published to the Live Project Hub!');
+            alert('Project published successfully!');
         });
 
-        // Math & STEM Logic
+        // Category Filter for AI Tools
+        function filterAICategory(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            if (category === 'all') {
+                renderAITools(aiToolsData);
+            } else {
+                const filtered = aiToolsData.filter(tool => tool.category === category);
+                renderAITools(filtered);
+            }
+        }
+
+        // Search Filter for AI Tools
+        function filterAITools() {
+            const query = document.getElementById('aiSearchInput').value.toLowerCase();
+            const filtered = aiToolsData.filter(tool => 
+                tool.name.toLowerCase().includes(query) || tool.desc.toLowerCase().includes(query)
+            );
+            renderAITools(filtered);
+        }
+
+        // Execute In-App Search or Custom URL Loader
+        function executeInAppSearch() {
+            const input = document.getElementById('customSearchUrl').value.trim();
+            if (!input) return;
+
+            let targetUrl = input;
+            if (!input.startsWith('http://') && !input.startsWith('https://')) {
+                targetUrl = `https://www.google.com/search?q=${encodeURIComponent(input)}&igu=1`;
+            }
+
+            openInAppModal('In-App Web Search', targetUrl);
+        }
+
+        // Modal Controls
+        function openInAppModal(title, url) {
+            document.getElementById('modalTitle').innerHTML = `<i class="fa-solid fa-globe"></i> ${title}`;
+            document.getElementById('modalFrame').src = url;
+            document.getElementById('inAppModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeInAppModal() {
+            document.getElementById('inAppModal').style.display = 'none';
+            document.getElementById('modalFrame').src = 'about:blank';
+            document.body.style.overflow = 'auto';
+        }
+
+        // STEM Calculators
         function calculateKinematics() {
             const u = parseFloat(document.getElementById('kU').value) || 0;
             const a = parseFloat(document.getElementById('kA').value) || 0;
@@ -877,7 +432,8 @@
             const v = u + (a * t);
             const s = (u * t) + (0.5 * a * t * t);
 
-            document.getElementById('kinematicsResult').innerHTML = `Velocity (v): ${v.toFixed(2)} m/s <br> Distance (s): ${s.toFixed(2)} m`;
+            document.getElementById('kinematicsResult').innerHTML = 
+                `Final Velocity (v): ${v.toFixed(2)} m/s <br> Displacement (s): ${s.toFixed(2)} m`;
         }
 
         function solveQuadratic() {
@@ -885,53 +441,59 @@
             const b = parseFloat(document.getElementById('quadB').value);
             const c = parseFloat(document.getElementById('quadC').value);
 
-            if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
-                document.getElementById('quadResult').innerHTML = "Invalid coefficients!";
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                document.getElementById('quadResult').innerText = "Please enter valid coefficients.";
                 return;
             }
 
-            const disc = b * b - 4 * a * c;
+            const disc = (b * b) - (4 * a * c);
+
             if (disc > 0) {
                 const x1 = (-b + Math.sqrt(disc)) / (2 * a);
                 const x2 = (-b - Math.sqrt(disc)) / (2 * a);
-                document.getElementById('quadResult').innerHTML = `Roots: x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}`;
+                document.getElementById('quadResult').innerText = `Real Roots: x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}`;
             } else if (disc === 0) {
                 const x = -b / (2 * a);
-                document.getElementById('quadResult').innerHTML = `Single Root: x = ${x.toFixed(2)}`;
+                document.getElementById('quadResult').innerText = `Single Root: x = ${x.toFixed(2)}`;
             } else {
-                document.getElementById('quadResult').innerHTML = "Complex/Imaginary Roots";
+                const real = (-b / (2 * a)).toFixed(2);
+                const imag = (Math.sqrt(-disc) / (2 * a)).toFixed(2);
+                document.getElementById('quadResult').innerText = `Complex Roots: ${real} ± ${imag}i`;
             }
         }
 
-        // Clicker Game Logic
+        // Mini Game: CPS Clicker Test
         let clickCount = 0;
-        let isTimerActive = false;
+        let timerRunning = false;
 
         function runClickTest() {
             const btn = document.getElementById('clickerGameBtn');
-            const scoreDisplay = document.getElementById('clickScoreDisplay');
+            const display = document.getElementById('clickScoreDisplay');
 
-            if (!isTimerActive) {
-                isTimerActive = true;
-                clickCount = 0;
-                scoreDisplay.innerText = clickCount;
-                btn.innerText = "CLICK AS FAST AS YOU CAN!";
-                
+            if (!timerRunning) {
+                timerRunning = true;
+                clickCount = 1;
+                display.innerText = clickCount;
+                btn.innerText = 'CLICK RAPIDLY!';
+
                 setTimeout(() => {
-                    isTimerActive = false;
-                    btn.innerText = "Try Again";
-                    alert(`Time up! Your score: ${clickCount} clicks in 5 seconds!`);
+                    timerRunning = false;
+                    const cps = (clickCount / 5).toFixed(1);
+                    btn.innerText = 'Start Speed Test';
+                    alert(`Time up! Total Clicks: ${clickCount} | Speed: ${cps} Clicks/sec`);
                 }, 5000);
             } else {
                 clickCount++;
-                scoreDisplay.innerText = clickCount;
+                display.innerText = clickCount;
             }
         }
 
-        // Initialize App
-        renderAITools(aiToolsData);
-        renderJobPlatforms();
-        renderProjects();
+        // Initial Render Calls
+        window.onload = function() {
+            renderAITools(aiToolsData);
+            renderJobPlatforms();
+            renderProjects();
+        };
     </script>
 </body>
 </html>
